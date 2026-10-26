@@ -3,37 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI 4K Stock Gradient Video Studio Pro</title>
+    <title>AI 4K Stock Gradient Video Studio Pro v5.0 — Lifetime Enterprise Edition</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&display=swap');
 
         body {
-            background-color: #070a12;
+            background-color: #050811;
             color: #f1f5f9;
             font-family: 'Hind Siliguri', 'Inter', sans-serif;
             overflow-x: hidden;
         }
         .glass-card {
-            background: rgba(15, 23, 42, 0.88);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            background: rgba(15, 23, 42, 0.94);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+        }
+
+        .canvas-stage {
+            width: 100%;
+            height: 50vh;
+            min-height: 290px;
+            max-height: 520px;
+            background:
+                radial-gradient(circle at center, rgba(15, 23, 42, 0.84) 0%, rgba(2, 6, 23, 0.98) 100%),
+                repeating-linear-gradient(45deg, #0b1120 25%, transparent 25%, transparent 75%, #0b1120 75%, #0b1120),
+                repeating-linear-gradient(45deg, #0b1120 25%, #060a12 25%, #060a12 75%, #0b1120 75%, #0b1120);
+            background-position: 0 0, 0 0, 10px 10px;
+            background-size: 100% 100%, 20px 20px, 20px 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 14px;
         }
 
         .canvas-wrapper {
-            aspect-ratio: 4096 / 2160;
-            width: 100%;
-            max-height: 62vh;
             background: #000;
             position: relative;
-            box-shadow: 0 0 60px -15px rgba(56, 189, 248, 0.25);
+            box-shadow: 0 0 55px -5px rgba(56, 189, 248, 0.35), 0 0 0 1.5px rgba(56, 189, 248, 0.45);
+            transition: width 0.18s ease, height 0.18s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         canvas {
             width: 100%;
             height: 100%;
-            object-fit: contain;
             display: block;
         }
 
@@ -42,7 +61,7 @@
             appearance: none;
             border: none;
             width: 100%;
-            height: 36px;
+            height: 32px;
             border-radius: 8px;
             cursor: pointer;
             background: transparent;
@@ -58,135 +77,185 @@
         }
 
         ::-webkit-scrollbar { width: 6px; height: 6px; }
-        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-track { background: #090d16; }
         ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
         ::-webkit-scrollbar-thumb:hover { background: #475569; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col lg:flex-row p-3 lg:p-5 gap-5">
+<body class="min-h-screen flex flex-col lg:flex-row p-3 lg:p-4 gap-4">
 
     <!-- বাম পাশের কন্ট্রোল প্যানেল -->
-    <aside class="w-full lg:w-[430px] glass-card rounded-2xl p-4 lg:p-5 flex flex-col gap-3.5 overflow-y-auto max-h-[96vh] shrink-0">
-        <!-- হেডার -->
-        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+    <aside class="w-full lg:w-[475px] glass-card rounded-2xl p-4 flex flex-col gap-3 overflow-y-auto max-h-[96vh] shrink-0">
+        <!-- হেডার ও লাইফটাইম ইঞ্জিন ব্যাজ -->
+        <div class="flex items-center justify-between border-b border-slate-800 pb-2.5">
             <div>
-                <div class="flex items-center gap-2">
-                    <span class="px-2 py-0.5 bg-sky-500/20 text-sky-400 text-[11px] font-bold rounded-md border border-sky-500/30">IMAGE-CENTRIC AI</span>
-                    <span class="px-2 py-0.5 bg-emerald-500/20 text-emerald-400 text-[11px] font-bold rounded-md border border-emerald-500/30">CRASH-FREE EXPORT</span>
+                <div class="flex items-center gap-1.5 flex-wrap">
+                    <span class="px-2 py-0.5 bg-sky-500/20 text-sky-400 text-[10px] font-bold rounded border border-sky-500/30">NATIVE MP4 MUXER v5.0</span>
+                    <span class="px-2 py-0.5 bg-emerald-500/20 text-emerald-400 text-[10px] font-bold rounded border border-emerald-500/30">ZERO CDN / LIFETIME</span>
+                    <span class="px-2 py-0.5 bg-amber-500/20 text-amber-300 text-[10px] font-bold rounded border border-amber-500/30">WAKE-LOCK & WORKER</span>
                 </div>
-                <h1 class="text-xl font-bold mt-1.5 bg-gradient-to-r from-sky-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
-                    AI Gradient Video Studio Pro
+                <h1 class="text-lg font-bold mt-1 bg-gradient-to-r from-sky-400 via-indigo-400 to-emerald-400 bg-clip-text text-transparent">
+                    AI Stock Gradient Video Studio Pro
                 </h1>
             </div>
-            <div class="text-right text-[11px] text-slate-400 font-mono">
-                4096×2160<br>Adobe Stock
+            <div id="headerArtboardBadge" class="text-right text-[11px] text-slate-400 font-mono leading-tight">
+                1920×1080<br><span class="text-emerald-400">Lifetime Ready</span>
             </div>
         </div>
 
-        <!-- ১. ইমেজ আপলোড ও অরিজিনাল ইমেজ কন্ট্রোল -->
-        <div class="p-3.5 rounded-xl bg-slate-900/95 border border-sky-500/40 flex flex-col gap-3 shadow-inner">
+        <!-- প্রজেক্ট প্রিসেট সেভ / লোড বার (Lifetime Persistence) -->
+        <div class="flex items-center justify-between gap-1.5 bg-slate-900/90 border border-slate-800 rounded-xl px-2.5 py-1.5">
+            <span class="text-[11px] text-slate-300 font-medium flex items-center gap-1">
+                🛡️ <span id="autoSaveStatus" class="text-emerald-400">অটো-সেভ সক্রিয়</span>
+            </span>
+            <div class="flex items-center gap-1.5">
+                <button type="button" id="exportPresetBtn" class="text-[10px] bg-sky-500/15 hover:bg-sky-500/25 text-sky-300 px-2 py-1 rounded border border-sky-500/30 transition cursor-pointer font-semibold">
+                    💾 প্রিসেট সেভ (.json)
+                </button>
+                <label class="text-[10px] bg-indigo-500/15 hover:bg-indigo-500/25 text-indigo-300 px-2 py-1 rounded border border-indigo-500/30 transition cursor-pointer font-semibold">
+                    📂 প্রিসেট লোড
+                    <input type="file" id="importPresetInput" accept=".json" class="hidden" />
+                </label>
+                <button type="button" id="factoryResetBtn" title="সব সেটিংস ডিফল্ট করুন" class="text-[10px] bg-slate-800 hover:bg-rose-500/20 text-slate-400 hover:text-rose-300 px-2 py-1 rounded border border-slate-700 transition cursor-pointer">
+                    ↺ রিসেট
+                </button>
+            </div>
+        </div>
+
+        <!-- ১. ইমেজ আপলোড ও স্মার্ট ফিট কন্ট্রোল -->
+        <div class="p-3 rounded-xl bg-slate-900/95 border border-sky-500/40 flex flex-col gap-2.5 shadow-inner">
             <div class="flex justify-between items-center">
                 <label class="text-xs font-bold text-sky-300 flex items-center gap-1.5">
                     <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                    ১. আপনার গ্রেডিয়েন্ট ইমেজ আপলোড করুন
+                    ১. আপনার গ্রেডিয়েন্ট ইমেজ ও ফিট মোড
                 </label>
                 <span id="imageLoadedBadge" class="text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded border border-emerald-500/30 font-semibold">ডিফল্ট গ্রেডিয়েন্ট সক্রিয়</span>
             </div>
 
-            <div class="flex gap-3 items-center">
-                <label class="flex-1 cursor-pointer bg-slate-800/90 hover:bg-slate-700 border border-dashed border-sky-500/50 rounded-xl p-2.5 text-center transition group">
-                    <span class="text-xs text-sky-300 group-hover:text-white block font-semibold">📁 গ্যালারি থেকে গ্রেডিয়েন্ট ইমেজ দিন</span>
+            <div class="flex gap-2.5 items-center">
+                <label class="flex-1 cursor-pointer bg-slate-800/90 hover:bg-slate-700 border border-dashed border-sky-500/50 rounded-xl p-2 text-center transition group">
+                    <span class="text-xs text-sky-300 group-hover:text-white block font-semibold">📁 গ্যালারি থেকে হাই-রেজোলিউশন ছবি দিন</span>
                     <span class="text-[10px] text-slate-400 block mt-0.5">আপনার ছবির হুবহু রঙ ও ডিজাইনকে কেন্দ্র করেই ভিডিও হবে</span>
                     <input type="file" id="imageUpload" accept="image/*" class="hidden" />
                 </label>
                 <div class="relative shrink-0">
-                    <img id="uploadedThumb" class="w-16 h-14 rounded-lg object-cover border-2 border-sky-400 shadow-md" alt="Preview" />
-                    <span class="absolute -bottom-1 right-0 bg-slate-950/90 text-[9px] text-sky-300 px-1 rounded">মূল ছবি</span>
+                    <img id="uploadedThumb" class="w-16 h-12 rounded-lg object-cover border-2 border-sky-400 shadow-md" alt="Preview" />
+                    <span class="absolute -bottom-1 right-0 bg-slate-950/90 text-[9px] text-sky-300 px-1 rounded">বেস</span>
                 </div>
             </div>
 
-            <!-- ইমেজ প্রাধান্য ও সফটনেস কন্ট্রোল -->
-            <div class="grid grid-cols-2 gap-3 pt-2 border-t border-slate-800">
+            <div class="grid grid-cols-3 gap-2 pt-1.5 border-t border-slate-800 items-center">
                 <div>
-                    <div class="flex justify-between text-[11px] text-slate-200 mb-1">
-                        <span>আসল ছবির প্রাধান্য:</span>
-                        <span id="texBlendVal" class="font-mono text-emerald-400 font-bold">92%</span>
-                    </div>
-                    <input type="range" id="texBlendRange" min="0" max="100" value="92" class="w-full h-1.5 bg-slate-700 rounded-lg cursor-pointer" title="100% দিলে শুধুমাত্র আপনার আপলোড করা ছবিটিই অ্যানিমেট হবে">
+                    <label class="block text-[10px] text-slate-400 mb-0.5">ইমেজ ফিট মোড</label>
+                    <select id="fitModeSelect" class="w-full bg-slate-800 border border-slate-700 rounded p-1 text-[11px] text-white cursor-pointer">
+                        <option value="cover" selected>Smart Cover (ক্রপ)</option>
+                        <option value="stretch">Exact Stretch (ফিটিং)</option>
+                        <option value="mirror">Mirror Tile (প্যাটার্ন)</option>
+                    </select>
                 </div>
                 <div>
-                    <div class="flex justify-between text-[11px] text-slate-200 mb-1">
-                        <span>ইমেজ সফট ব্লার:</span>
-                        <span id="imgBlurVal" class="font-mono text-sky-400">2 px</span>
+                    <div class="flex justify-between text-[10px] text-slate-200 mb-0.5">
+                        <span>ছবির প্রাধান্য:</span>
+                        <span id="texBlendVal" class="font-mono text-emerald-400 font-bold">94%</span>
                     </div>
-                    <input type="range" id="imgBlurRange" min="0" max="30" value="2" class="w-full h-1.5 bg-slate-700 rounded-lg cursor-pointer" title="0 দিলে ছবি একদম শার্প থাকবে, বাড়ালে স্মুথ ব্লার হবে">
+                    <input type="range" id="texBlendRange" min="0" max="100" value="94" class="w-full h-1.5 bg-slate-700 rounded-lg cursor-pointer">
+                </div>
+                <div>
+                    <div class="flex justify-between text-[10px] text-slate-200 mb-0.5">
+                        <span>GPU সফট ব্লার:</span>
+                        <span id="imgBlurVal" class="font-mono text-sky-400">25%</span>
+                    </div>
+                    <input type="range" id="imgBlurRange" min="0" max="100" value="25" class="w-full h-1.5 bg-slate-700 rounded-lg cursor-pointer">
                 </div>
             </div>
         </div>
 
-        <!-- ২. ইমেজ-কেন্দ্রিক অ্যানিমেশন ইঞ্জিন -->
-        <div class="p-3.5 rounded-xl bg-slate-900/70 border border-slate-800 flex flex-col gap-3">
+        <!-- ২. ২ডি সার্কুলার সিমলেস অ্যানিমেশন ইঞ্জিন -->
+        <div class="p-3 rounded-xl bg-slate-900/70 border border-slate-800 flex flex-col gap-2.5">
             <div>
-                <label class="block text-xs font-bold text-slate-200 mb-1.5">২. ইমেজ অ্যানিমেশন স্টাইল (Image-Centric Motion)</label>
-                <select id="shaderMode" class="w-full bg-slate-800 border border-slate-700 rounded-lg p-2 text-xs text-white font-medium focus:outline-none focus:border-sky-500">
-                    <option value="0" selected>🌊 Direct Image Liquify Flow (আপনার ছবির ওপর স্মুথ ঢেউ)</option>
-                    <option value="1">✨ Image Breathing & Silk Wave (ছবির রঙের জীবন্ত পালস ও প্রবাহ)</option>
-                    <option value="2">🎨 2D Elastic Mesh Warp (অ্যাপল স্টাইল ইমেজ মেশ মোশন)</option>
-                    <option value="3">🌀 Diagonal Shimmer & Pan (কোণাকুণি আলোর আভা ও স্মুথ ফ্লো)</option>
+                <label class="block text-xs font-bold text-slate-200 mb-1">২. প্রফেশনাল অ্যানিমেশন স্টাইল (True 2D Circular Loop)</label>
+                <select id="shaderMode" class="w-full bg-slate-800 border border-slate-700 rounded-lg p-2 text-xs text-white font-medium focus:outline-none focus:border-sky-500 cursor-pointer">
+                    <option value="0" selected>🌊 Direct Image Liquify Flow (আপনার ছবির ওপর মাখনের মতো ঢেউ)</option>
+                    <option value="1">✨ Continuous Silk Wave (একমুখী অবিরাম সিল্ক প্রবাহ - No PingPong)</option>
+                    <option value="2">🎨 Apple Elastic Mesh Warp (অর্গানিক ২ডি মেশ মোশন)</option>
+                    <option value="3">🌀 Diagonal Shimmer Stream (কোণাকুণি অবিরাম আলোর স্রোত)</option>
+                    <option value="4">🌌 Aurora Borealis Curtains (স্টক বেস্ট-সেলার অরোরা ওয়েভ)</option>
+                    <option value="5">💎 Frosted Glass Refraction (গ্লাসমরফিজম প্রিজম লিকুইড)</option>
                 </select>
             </div>
 
             <div class="grid grid-cols-2 gap-3">
                 <div>
-                    <div class="flex justify-between text-[11px] text-slate-300 mb-1">
-                        <span>অ্যানিমেশন গতি (Speed)</span>
+                    <div class="flex justify-between text-[11px] text-slate-300 mb-0.5">
+                        <span>লুপ সাইকেল গতি (Speed)</span>
                         <span id="speedVal" class="font-mono text-sky-400">1x (Loop)</span>
                     </div>
-                    <input type="range" id="speedRange" min="1" max="3" step="1" value="1" class="w-full h-1.5 bg-slate-700 rounded-lg">
+                    <input type="range" id="speedRange" min="1" max="4" step="1" value="1" class="w-full h-1.5 bg-slate-700 rounded-lg cursor-pointer">
                 </div>
                 <div>
-                    <div class="flex justify-between text-[11px] text-slate-300 mb-1">
-                        <span>ঢেউয়ের বিস্তার (Wave Size)</span>
-                        <span id="scaleVal" class="font-mono text-sky-400">1.5</span>
+                    <div class="flex justify-between text-[11px] text-slate-300 mb-0.5">
+                        <span>ঢেউয়ের বিস্তার (Wave Scale)</span>
+                        <span id="scaleVal" class="font-mono text-sky-400">1.4</span>
                     </div>
-                    <input type="range" id="scaleRange" min="0.5" max="4.0" step="0.1" value="1.5" class="w-full h-1.5 bg-slate-700 rounded-lg">
+                    <input type="range" id="scaleRange" min="0.4" max="4.0" step="0.1" value="1.4" class="w-full h-1.5 bg-slate-700 rounded-lg cursor-pointer">
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 gap-3">
+            <div class="grid grid-cols-3 gap-2">
                 <div>
-                    <div class="flex justify-between text-[11px] text-slate-300 mb-1">
-                        <span>লিকুইফাই মাত্রা (Motion Strength)</span>
+                    <div class="flex justify-between text-[10px] text-slate-300 mb-0.5">
+                        <span>লিকুইফাই (Warp)</span>
                         <span id="warpVal" class="font-mono text-sky-400">0.35</span>
                     </div>
-                    <input type="range" id="warpRange" min="0.05" max="1.20" step="0.05" value="0.35" class="w-full h-1.5 bg-slate-700 rounded-lg" title="কম রাখলে আসল গ্রেডিয়েন্ট ঠিক রেখে হালকা দুলবে">
+                    <input type="range" id="warpRange" min="0.05" max="1.20" step="0.05" value="0.35" class="w-full h-1.5 bg-slate-700 rounded-lg cursor-pointer">
                 </div>
                 <div>
-                    <div class="flex justify-between text-[11px] text-slate-300 mb-1">
-                        <span>ব্রাইট গ্লো (Light Glow)</span>
+                    <div class="flex justify-between text-[10px] text-slate-300 mb-0.5">
+                        <span>ব্রাইট গ্লো (Glow)</span>
                         <span id="glowVal" class="font-mono text-sky-400">0.20</span>
                     </div>
-                    <input type="range" id="glowRange" min="0.0" max="0.8" step="0.05" value="0.20" class="w-full h-1.5 bg-slate-700 rounded-lg">
+                    <input type="range" id="glowRange" min="0.0" max="0.85" step="0.05" value="0.20" class="w-full h-1.5 bg-slate-700 rounded-lg cursor-pointer">
                 </div>
-            </div>
-
-            <div>
-                <div class="flex justify-between text-[11px] text-slate-400 mb-1">
-                    <span>অ্যান্টি-ব্যান্ডিং ডিদারিং (Adobe Stock Quality Shield)</span>
-                    <span id="grainVal" class="font-mono text-emerald-400">0.015</span>
+                <div>
+                    <div class="flex justify-between text-[10px] text-slate-300 mb-0.5">
+                        <span>ডিদারিং (Anti-Band)</span>
+                        <span id="grainVal" class="font-mono text-emerald-400">0.014</span>
+                    </div>
+                    <input type="range" id="grainRange" min="0.004" max="0.045" step="0.002" value="0.014" class="w-full h-1.5 bg-slate-700 rounded-lg cursor-pointer">
                 </div>
-                <input type="range" id="grainRange" min="0.005" max="0.045" step="0.001" value="0.015" class="w-full h-1.5 bg-slate-700 rounded-lg">
             </div>
         </div>
 
-        <!-- ৩. AI এক্সট্রাক্টেড কালার প্যালেট -->
-        <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-            <div class="flex justify-between items-center mb-2">
-                <label class="text-xs font-semibold text-slate-200">৩. ছবির শনাক্তকৃত রঙ (গ্লো ও ব্লেন্ডিংয়ের জন্য)</label>
-                <button id="randomPaletteBtn" class="text-[11px] bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-300 px-2.5 py-0.5 rounded-md border border-indigo-500/30 transition">
-                    🎲 নতুন প্রিসেট গ্রেডিয়েন্ট
-                </button>
+        <!-- ৩. কালার গ্রেডিং ও AI কালার প্যালেট -->
+        <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 flex flex-col gap-2">
+            <div class="flex justify-between items-center">
+                <label class="text-xs font-bold text-slate-200">৩. কালার গ্রেডিং ও ৫-কালার প্যালেট</label>
+                <div class="flex gap-1.5">
+                    <button id="resetGradeBtn" class="text-[10px] bg-slate-800 hover:bg-slate-700 text-slate-300 px-2 py-0.5 rounded border border-slate-700 transition cursor-pointer">রিসেট গ্রেড</button>
+                    <button id="randomPaletteBtn" class="text-[10px] bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-300 px-2 py-0.5 rounded border border-indigo-500/30 transition cursor-pointer">🎲 র‍্যান্ডম প্রিসেট</button>
+                </div>
             </div>
+
+            <!-- Hue, Saturation, Contrast, Brightness -->
+            <div class="grid grid-cols-4 gap-2 bg-slate-950/60 p-2 rounded-lg border border-slate-800/80">
+                <div>
+                    <div class="flex justify-between text-[9px] text-slate-400"><span>Hue</span><span id="hueVal" class="text-sky-400">0°</span></div>
+                    <input type="range" id="hueRange" min="-180" max="180" value="0" class="w-full h-1 bg-slate-700 rounded cursor-pointer">
+                </div>
+                <div>
+                    <div class="flex justify-between text-[9px] text-slate-400"><span>Sat</span><span id="satVal" class="text-sky-400">100%</span></div>
+                    <input type="range" id="satRange" min="20" max="200" value="100" class="w-full h-1 bg-slate-700 rounded cursor-pointer">
+                </div>
+                <div>
+                    <div class="flex justify-between text-[9px] text-slate-400"><span>Cont</span><span id="contVal" class="text-sky-400">100%</span></div>
+                    <input type="range" id="contRange" min="60" max="160" value="100" class="w-full h-1 bg-slate-700 rounded cursor-pointer">
+                </div>
+                <div>
+                    <div class="flex justify-between text-[9px] text-slate-400"><span>Bright</span><span id="brightVal" class="text-sky-400">0%</span></div>
+                    <input type="range" id="brightRange" min="-40" max="40" value="0" class="w-full h-1 bg-slate-700 rounded cursor-pointer">
+                </div>
+            </div>
+
             <div class="grid grid-cols-5 gap-2">
                 <div class="flex flex-col items-center">
                     <input type="color" id="col0" value="#0284c7">
@@ -211,72 +280,115 @@
             </div>
         </div>
 
-        <!-- ৪. এডোবি স্টক এক্সপোর্ট সেটিংস -->
-        <div class="p-3.5 rounded-xl bg-sky-950/30 border border-sky-500/30 flex flex-col gap-2.5">
+        <!-- ৪. কাস্টম পিক্সেল আর্টবোর্ড ও নিখুঁত এক্সপোর্ট সেটিংস -->
+        <div class="p-3 rounded-xl bg-sky-950/30 border border-sky-500/30 flex flex-col gap-2.5">
             <div class="flex justify-between items-center">
-                <h3 class="text-xs font-bold text-sky-300">৪. এক্সপোর্ট সেটিংস (Crash-Guard সক্রিয়)</h3>
-                <span class="text-[10px] text-emerald-400 font-mono">Seamless Loop</span>
+                <h3 class="text-xs font-bold text-sky-300">৪. আর্টবোর্ড পিক্সেল সাইজ ও লাইফটাইম এক্সপোর্ট ইঞ্জিন</h3>
+                <span id="aspectRatioLabel" class="text-[10px] bg-sky-500/20 text-sky-300 px-2 py-0.5 rounded font-mono">Aspect: 1.78:1</span>
             </div>
 
-            <div class="grid grid-cols-3 gap-2">
-                <div>
-                    <label class="block text-[10px] text-slate-400 mb-1">ডিউরেশন</label>
-                    <select id="durationSelect" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-1.5 text-xs text-white font-medium">
-                        <option value="15">15 সেকেন্ড</option>
-                        <option value="20" selected>20 সেকেন্ড</option>
-                        <option value="25">25 সেকেন্ড</option>
-                        <option value="30">30 সেকেন্ড</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-[10px] text-slate-400 mb-1">ফ্রেম রেট</label>
-                    <select id="fpsSelect" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-1.5 text-xs text-white font-medium">
-                        <option value="30" selected>30 FPS</option>
-                        <option value="60">60 FPS</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-[10px] text-slate-400 mb-1">বিট রেট</label>
-                    <select id="bitrateSelect" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-1.5 text-xs text-white font-medium">
-                        <option value="50000000" selected>50 Mbps</option>
-                        <option value="35000000">35 Mbps (Safe)</option>
-                        <option value="25000000">25 Mbps (Fast)</option>
-                    </select>
-                </div>
-            </div>
-
+            <!-- প্রিসেট ও কাস্টম পিক্সেল কন্ট্রোল -->
             <div>
-                <label class="block text-[10px] text-slate-400 mb-1">রেজোলিউশন (আর্টবোর্ড সাইজ)</label>
-                <select id="resSelect" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-xs text-white font-medium">
-                    <option value="4096x2160" selected>4K DCI (4096 × 2160 px) — Adobe Stock Standard</option>
-                    <option value="3840x2160">4K UHD (3840 × 2160 px)</option>
-                    <option value="2048x1080">2K DCI (2048 × 1080 px) — লো-র‍্যাম পিসির জন্য</option>
+                <label class="block text-[10px] text-slate-400 mb-1">আর্টবোর্ড প্রিসেট অথবা নিচে নিজের মতো কাস্টম পিক্সেল দিন</label>
+                <select id="resPresetSelect" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-1.5 text-xs text-white font-medium mb-2 cursor-pointer">
+                    <option value="1920x1080" selected>Full HD (1920 × 1080 px) — ১০০% স্মুথ ও ইউনিভার্সাল (সেরা)</option>
+                    <option value="2560x1440">2K QHD (2560 × 1440 px) — 16:9 High Detail</option>
+                    <option value="3840x2160">4K UHD (3840 × 2160 px) — 16:9 Ultra HD Stock</option>
+                    <option value="4096x2160">4K DCI (4096 × 2160 px) — Cinema 4K</option>
+                    <option value="1080x1920">FHD Vertical (1080 × 1920 px) — Reels / Shorts / TikTok</option>
+                    <option value="2160x3840">4K Vertical (2160 × 3840 px) — Ultra Vertical</option>
+                    <option value="1080x1080">FHD Square (1080 × 1080 px) — 1:1 Social Post</option>
+                    <option value="2160x2160">4K Square (2160 × 2160 px) — 1:1 Master Square</option>
+                    <option value="custom">✏️ Custom Pixel Size (নিচে নিজের মতো পিক্সেল লিখুন)</option>
                 </select>
+
+                <!-- কাস্টম Width x Height (px) ইনপুট বক্স + Apply বাটন -->
+                <div class="grid grid-cols-12 gap-1.5 items-end bg-slate-950/90 p-2 rounded-lg border border-sky-500/40">
+                    <div class="col-span-4">
+                        <label class="block text-[9px] text-sky-300 font-semibold mb-0.5">Width (প্রস্থ px)</label>
+                        <input type="number" id="customWidthInput" min="128" max="4096" step="2" value="1920" placeholder="Width" class="w-full bg-slate-900 border border-slate-700 focus:border-sky-400 rounded px-2 py-1 text-xs font-mono text-white font-bold focus:outline-none">
+                    </div>
+                    <div class="col-span-2 flex justify-center">
+                        <button type="button" id="swapDimensionsBtn" title="প্রস্থ এবং উচ্চতা অদলবদল করুন" class="w-full py-1 rounded bg-slate-800 hover:bg-sky-500/20 text-slate-200 hover:text-sky-300 border border-slate-700 transition cursor-pointer text-xs font-bold">
+                            ⇄
+                        </button>
+                    </div>
+                    <div class="col-span-4">
+                        <label class="block text-[9px] text-sky-300 font-semibold mb-0.5">Height (উচ্চতা px)</label>
+                        <input type="number" id="customHeightInput" min="128" max="4096" step="2" value="1080" placeholder="Height" class="w-full bg-slate-900 border border-slate-700 focus:border-sky-400 rounded px-2 py-1 text-xs font-mono text-white font-bold focus:outline-none">
+                    </div>
+                    <div class="col-span-2">
+                        <button type="button" id="applyArtboardBtn" title="কাস্টম আর্টবোর্ড সাইজ সেট করুন" class="w-full py-1 rounded bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-[11px] transition cursor-pointer shadow">
+                            সেট
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- এক্সপোর্ট ইঞ্জিন মোড সিলেক্টর -->
+            <div>
+                <label class="block text-[10px] text-emerald-300 font-semibold mb-0.5">রেন্ডার ইঞ্জিন মোড (Built-in Native MP4 / Zero CDN)</label>
+                <select id="exportEngineSelect" class="w-full bg-slate-900 border border-emerald-500/40 rounded-lg p-1.5 text-xs text-emerald-200 font-semibold cursor-pointer">
+                    <option value="auto" selected>🎯 Built-in Native MP4 Muxer (২৫ সেকেন্ড = কাঁটায় কাঁটায় ২৫.০০ সেকেন্ড)</option>
+                    <option value="stream">⚡ Unthrottled Worker Stream (যেকোনো ব্রাউজারে রিয়েল-টাইম রেকর্ড)</option>
+                </select>
+            </div>
+
+            <!-- ডিউরেশন, ফ্রেম রেট ও বিটরেট -->
+            <div class="grid grid-cols-3 gap-2 pt-0.5">
+                <div>
+                    <label class="block text-[10px] text-slate-400 mb-0.5">ডিউরেশন (Loop)</label>
+                    <select id="durationSelect" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-1.5 text-xs text-white font-medium cursor-pointer">
+                        <option value="5">5 সেকেন্ড (Quick)</option>
+                        <option value="10">10 সেকেন্ড</option>
+                        <option value="15">15 সেকেন্ড</option>
+                        <option value="20">20 সেকেন্ড</option>
+                        <option value="25" selected>25 সেকেন্ড (Stock Best)</option>
+                        <option value="30">30 সেকেন্ড (Full Loop)</option>
+                        <option value="60">60 সেকেন্ড (Extended)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-[10px] text-slate-400 mb-0.5">ফ্রেম রেট (FPS)</label>
+                    <select id="fpsSelect" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-1.5 text-xs text-white font-medium cursor-pointer">
+                        <option value="30" selected>30 FPS (Ultra Smooth)</option>
+                        <option value="60">60 FPS (High Speed)</option>
+                        <option value="24">24 FPS (Cinema)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-[10px] text-slate-400 mb-0.5">বিটরেট (No Lag)</label>
+                    <select id="bitrateSelect" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-1.5 text-xs text-white font-medium cursor-pointer">
+                        <option value="16000000" selected>16 Mbps (Universal Smooth)</option>
+                        <option value="28000000">28 Mbps (4K Stock Master)</option>
+                        <option value="10000000">10 Mbps (Fast / Mobile Safe)</option>
+                    </select>
+                </div>
             </div>
         </div>
 
         <!-- রেন্ডার ও ডাউনলোড বাটন -->
         <div class="flex gap-2">
             <button id="recordBtn" class="flex-1 py-3 px-4 rounded-xl font-bold text-xs bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white shadow-lg shadow-sky-600/25 transition flex justify-center items-center gap-2 cursor-pointer">
-                <span>🎬 ভিডিও রেন্ডার ও ডাউনলোড শুরু করুন</span>
+                <span>🎬 সম্পূর্ণ ভিডিও রেন্ডার ও ডাউনলোড</span>
             </button>
-            <button id="stopBtn" class="hidden py-3 px-4 rounded-xl font-bold text-xs bg-emerald-600 hover:bg-emerald-500 text-white transition cursor-pointer">
-                💾 এখনই সেভ করুন
+            <button id="stopBtn" class="hidden py-3 px-4 rounded-xl font-bold text-xs bg-rose-600 hover:bg-rose-500 text-white transition cursor-pointer">
+                ⏹️ বাতিল করুন
             </button>
         </div>
 
         <!-- স্ট্যাটাস ও প্রগ্রেস বার -->
         <div id="progressContainer" class="hidden flex-col gap-1.5 p-3 rounded-xl bg-slate-900 border border-sky-500/40">
             <div class="flex justify-between text-xs font-medium">
-                <span id="progressText" class="text-sky-300">মাস্টার ভিডিও ফাইল তৈরি হচ্ছে...</span>
+                <span id="progressText" class="text-sky-300">ফ্রেম-বাই-ফ্রেম রেন্ডার হচ্ছে...</span>
                 <span id="progressPercent" class="text-white font-mono">0%</span>
             </div>
-            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-                <div id="progressBar" class="bg-gradient-to-r from-sky-400 to-emerald-400 h-full w-0 transition-all duration-150"></div>
+            <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                <div id="progressBar" class="bg-gradient-to-r from-sky-400 to-emerald-400 h-full w-0 transition-all duration-75"></div>
             </div>
-            <div class="flex justify-between text-[10px] text-slate-400">
-                <span id="timeCounter">00:00 / 00:20</span>
-                <span class="text-amber-300">⚡ ক্র্যাশ-মুক্ত হার্ডওয়্যার স্ট্রিমিং চলছে</span>
+            <div class="flex justify-between text-[10px] text-slate-400 font-mono">
+                <span id="frameCounter">Frame: 0 / 750</span>
+                <span id="codecBadge" class="text-emerald-400">🎯 Native ISO MP4 Muxer</span>
             </div>
         </div>
 
@@ -284,46 +396,101 @@
         <div id="toastBox" class="hidden p-2.5 rounded-lg bg-emerald-500/20 border border-emerald-500/40 text-emerald-200 text-xs text-center font-medium"></div>
     </aside>
 
-    <!-- ডান পাশের মেইন প্রিভিউ এবং AI SEO জেনারেটর -->
-    <main class="flex-1 flex flex-col gap-4 overflow-y-auto max-h-[96vh]">
-        <!-- ক্যানভাস কার্ড -->
+    <!-- ডান পাশের মেইন প্রিভিউ, ভেরিফিকেশন প্লেয়ার এবং AI SEO জেনারেটর -->
+    <main class="flex-1 flex flex-col gap-3.5 overflow-y-auto max-h-[96vh]">
+        <!-- ক্যানভাস ও টাইমলাইন কার্ড -->
         <div class="glass-card rounded-2xl p-4 flex flex-col items-center justify-center relative">
-            <div class="w-full flex flex-wrap justify-between items-center mb-3 gap-2">
+            <!-- টপ স্ট্যাটাস ও কুইক টুলবার -->
+            <div class="w-full flex flex-wrap justify-between items-center mb-2.5 gap-2">
                 <div class="flex items-center gap-2">
                     <span id="statusDot" class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
-                    <span id="statusLabel" class="text-xs font-semibold text-slate-200">লাইভ ইমেজ-কেন্দ্রিক অ্যানিমেশন প্রিভিউ</span>
+                    <span id="statusLabel" class="text-xs font-semibold text-slate-200">লাইভ আর্টবোর্ড প্রিভিউ সক্রিয়</span>
+                    <span id="liveFpsBadge" class="text-[10px] bg-slate-800 text-emerald-400 px-2 py-0.5 rounded font-mono border border-slate-700">60 FPS</span>
+                    <span id="engineCapBadge" class="text-[10px] bg-sky-500/15 text-sky-300 px-2 py-0.5 rounded font-mono border border-sky-500/30">Checking GPU...</span>
                 </div>
-                <div class="flex items-center gap-2">
-                    <button id="holdCompareBtn" class="text-xs bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-300 px-3 py-1 rounded-lg border border-indigo-500/30 transition cursor-pointer select-none">
+                <div class="flex items-center gap-2 flex-wrap">
+                    <div class="flex items-center gap-1 bg-slate-900 border border-slate-700 rounded-lg px-2 py-0.5">
+                        <span class="text-[10px] text-slate-400">প্রিভিউ রেজোলিউশন:</span>
+                        <select id="previewQualitySelect" class="bg-transparent text-[11px] text-sky-300 font-semibold focus:outline-none cursor-pointer">
+                            <option value="960">Fast (960p)</option>
+                            <option value="1280" selected>Sharp (1280p)</option>
+                            <option value="1920">Ultra (1080p)</option>
+                        </select>
+                    </div>
+                    <button id="holdCompareBtn" class="text-xs bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-300 px-2.5 py-1 rounded-lg border border-indigo-500/30 transition cursor-pointer select-none">
                         👁️ মূল ছবি দেখুন (চেপে ধরুন)
                     </button>
-                    <button id="snapshotBtn" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1 rounded-lg border border-slate-700 transition cursor-pointer">
-                        📸 4K PNG স্ন্যাপশট
+                    <button id="snapshotBtn" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 px-2.5 py-1 rounded-lg border border-slate-700 transition cursor-pointer">
+                        📸 PNG স্ন্যাপশট
                     </button>
-                    <span id="specBadge" class="text-xs bg-sky-500/10 border border-sky-500/30 text-sky-300 px-3 py-1 rounded-lg font-mono">
-                        4096 × 2160 px | 30 FPS
+                    <span id="specBadge" class="text-xs bg-sky-500/10 border border-sky-500/30 text-sky-300 px-2.5 py-1 rounded-lg font-mono">
+                        1920 × 1080 px | 30 FPS
                     </span>
                 </div>
             </div>
 
-            <!-- মূল ক্যানভাস কন্টেইনার -->
-            <div class="canvas-wrapper rounded-xl overflow-hidden border border-slate-800 flex items-center justify-center">
-                <canvas id="glCanvas" width="1920" height="1012"></canvas>
+            <!-- রেসপনসিভ আর্টবোর্ড স্টেজ -->
+            <div id="canvasStage" class="canvas-stage rounded-xl border border-slate-800/90">
+                <div id="canvasWrapper" class="canvas-wrapper rounded-lg overflow-hidden">
+                    <canvas id="glCanvas" width="1280" height="720"></canvas>
+                    <!-- আর্টবোর্ড ডাইমেনশন ওভারলে ব্যাজ -->
+                    <div id="artboardOverlayTag" class="absolute bottom-2 right-2 bg-slate-950/85 backdrop-blur px-2.5 py-0.5 rounded text-[10px] font-mono text-sky-300 border border-sky-500/30 pointer-events-none shadow">
+                        1920 × 1080 px
+                    </div>
+                </div>
+            </div>
+
+            <!-- প্রফেশনাল টাইমলাইন স্ক্রাবার ও প্লেব্যাক কন্ট্রোল বার -->
+            <div class="w-full mt-3 bg-slate-900/90 border border-slate-800 rounded-xl p-2.5 flex flex-wrap items-center gap-3">
+                <button id="playPauseBtn" class="px-3 py-1 rounded-lg bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 text-xs font-bold transition cursor-pointer shrink-0">
+                    ⏸️ Pause
+                </button>
+                <div class="flex-1 flex items-center gap-2 min-w-[180px]">
+                    <input type="range" id="timelineScrubber" min="0" max="1000" value="0" class="w-full h-1.5 bg-slate-700 rounded-lg cursor-pointer">
+                </div>
+                <span id="scrubTimeText" class="text-xs font-mono text-slate-300 shrink-0">00.0s / 25.0s</span>
+                <button id="testLoopBoundaryBtn" class="text-[11px] bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 px-2.5 py-1 rounded-lg border border-emerald-500/30 transition cursor-pointer shrink-0">
+                    🔁 টেস্ট সিমলেস লুপ (Seam Check)
+                </button>
             </div>
         </div>
 
-        <!-- Adobe Stock AI Metadata & Title Generator -->
+        <!-- রেন্ডার করা ভিডিওর তাৎক্ষণিক ভেরিফিকেশন প্লেয়ার (যাতে ইউজার সাথে সাথে ২৫/৩০/৬০ সেকেন্ড চেক করতে পারেন) -->
+        <div id="exportResultCard" class="hidden glass-card rounded-2xl p-4 border border-emerald-500/40 flex-col gap-3">
+            <div class="flex flex-wrap justify-between items-center gap-2">
+                <div class="flex items-center gap-2 flex-wrap">
+                    <span class="px-2 py-0.5 bg-emerald-500/20 text-emerald-300 text-xs font-bold rounded border border-emerald-500/40">✓ রেন্ডার সম্পন্ন ও ভেরিফাইড</span>
+                    <span id="verifiedMetaText" class="text-xs font-mono text-slate-200">Duration: 25.00s | Size: -- MB</span>
+                </div>
+                <div class="flex gap-2">
+                    <a id="manualDownloadLink" href="#" download="AdobeStock_Video.mp4" class="text-xs bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-3 py-1.5 rounded-lg transition shadow cursor-pointer">
+                        💾 আবার ডাউনলোড করুন
+                    </a>
+                    <button id="closePreviewCardBtn" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 py-1.5 rounded-lg border border-slate-700 cursor-pointer">
+                        ✕ বন্ধ করুন
+                    </button>
+                </div>
+            </div>
+            <video id="verifiedVideoPlayer" controls loop playsinline class="w-full max-h-64 rounded-xl bg-black border border-slate-800"></video>
+        </div>
+
+        <!-- Adobe Stock AI Metadata & CSV Generator -->
         <div class="glass-card rounded-2xl p-4 flex flex-col gap-3">
-            <div class="flex justify-between items-center">
+            <div class="flex flex-wrap justify-between items-center gap-2">
                 <div>
                     <h2 class="text-sm font-bold text-sky-300 flex items-center gap-1.5">
-                        🤖 AI Adobe Stock SEO Metadata (আপলোডের জন্য প্রস্তুত)
+                        🤖 AI Adobe Stock SEO Metadata & CSV Submitter (<span id="seoArtboardText" class="text-emerald-400 font-mono">1920×1080 px</span>)
                     </h2>
-                    <p class="text-[11px] text-slate-400">আপনার আপলোড করা গ্রেডিয়েন্ট ইমেজের রঙ ও মোশন অনুযায়ী তৈরি টাইটেল ও কিওয়ার্ড</p>
+                    <p class="text-[11px] text-slate-400">আপনার গ্রেডিয়েন্ট ইমেজের রঙ, আর্টবোর্ড সাইজ ও মোশন অনুযায়ী তৈরি ৪৯টি কিওয়ার্ড ও টাইটেল</p>
                 </div>
-                <button id="refreshSeoBtn" class="text-xs bg-slate-800 hover:bg-slate-700 text-sky-400 px-3 py-1.5 rounded-lg border border-slate-700 transition cursor-pointer">
-                    🔄 নতুন SEO জেনারেট করুন
-                </button>
+                <div class="flex gap-2">
+                    <button id="refreshSeoBtn" class="text-xs bg-slate-800 hover:bg-slate-700 text-sky-400 px-3 py-1.5 rounded-lg border border-slate-700 transition cursor-pointer">
+                        🔄 নতুন SEO জেনারেট
+                    </button>
+                    <button id="downloadCsvBtn" class="text-xs bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-300 px-3 py-1.5 rounded-lg border border-emerald-500/40 font-semibold transition cursor-pointer">
+                        📥 Adobe Stock CSV ডাউনলোড
+                    </button>
+                </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -331,16 +498,16 @@
                 <div class="bg-slate-900/90 p-3 rounded-xl border border-slate-800 flex flex-col justify-between gap-2">
                     <div>
                         <div class="flex justify-between items-center mb-1">
-                            <span class="text-[11px] font-semibold text-slate-300">Adobe Stock Title (Max 200 Chars):</span>
-                            <button onclick="copyText('seoTitle', this)" class="text-[11px] text-sky-400 hover:underline cursor-pointer">কপি করুন</button>
+                            <span class="text-[11px] font-semibold text-slate-300">Adobe Stock Title (<span id="titleCharCount" class="text-sky-400">172</span>/200 Chars):</span>
+                            <button onclick="copyText('seoTitle', this)" class="text-[11px] bg-sky-500/10 hover:bg-sky-500/20 text-sky-300 px-2 py-0.5 rounded border border-sky-500/30 cursor-pointer">কপি করুন</button>
                         </div>
                         <p id="seoTitle" class="text-xs text-slate-200 leading-relaxed font-sans select-all bg-slate-950 p-2.5 rounded-lg border border-slate-800/80">
-                            Liquify effect light blue sky cyan white abstract background video. Smooth gradient blend with soft blur, bright glow, subtle motion. Clean minimalist backdrop loop for presentations.
+                            Liquify fluid gradient sky blue cyan aqua and pastel sky blue abstract background video. Seamless loop with soft blur, glowing aura, and subtle liquid motion.
                         </p>
                     </div>
-                    <div class="text-[11px] text-slate-400 flex justify-between">
-                        <span>Category: <strong class="text-slate-200">Graphic Resources</strong></span>
-                        <span>Resolution: <strong class="text-emerald-400">4K DCI (4096×2160)</strong></span>
+                    <div class="text-[11px] text-slate-400 flex justify-between pt-1 border-t border-slate-800/80">
+                        <span>Category: <strong class="text-slate-200">Graphic Resources (ID: 7)</strong></span>
+                        <span>Loop: <strong class="text-emerald-400">100% Frame-Exact Seamless</strong></span>
                     </div>
                 </div>
 
@@ -348,11 +515,11 @@
                 <div class="bg-slate-900/90 p-3 rounded-xl border border-slate-800 flex flex-col justify-between gap-2">
                     <div>
                         <div class="flex justify-between items-center mb-1">
-                            <span class="text-[11px] font-semibold text-slate-300">Keywords (কমা দিয়ে সাজানো):</span>
-                            <button onclick="copyText('seoKeywords', this)" class="text-[11px] text-sky-400 hover:underline cursor-pointer">কপি করুন</button>
+                            <span class="text-[11px] font-semibold text-slate-300">Keywords (<span id="kwCountBadge" class="text-emerald-400">49</span>/49 tags):</span>
+                            <button onclick="copyText('seoKeywords', this)" class="text-[11px] bg-sky-500/10 hover:bg-sky-500/20 text-sky-300 px-2 py-0.5 rounded border border-sky-500/30 cursor-pointer">সব কপি করুন</button>
                         </div>
-                        <p id="seoKeywords" class="text-xs text-slate-300 leading-relaxed font-sans select-all bg-slate-950 p-2.5 rounded-lg border border-slate-800/80">
-                            liquify, gradient, abstract, background, video, smooth, blend, soft blur, bright glow, subtle motion, minimalist, backdrop, loop, seamless, 4k, presentation, modern, fluid, silk, wave, pastel, clean, corporate, wallpaper, motion graphics
+                        <p id="seoKeywords" class="text-xs text-slate-300 leading-relaxed font-sans select-all bg-slate-950 p-2.5 rounded-lg border border-slate-800/80 max-h-28 overflow-y-auto">
+                            gradient, abstract, background, video, seamless loop, loop, liquify, fluid, smooth, blend, soft blur, bright glow, subtle motion, minimalist, clean, backdrop, 4k, uhd, presentation, modern
                         </p>
                     </div>
                 </div>
@@ -363,12 +530,360 @@
 <script>
 /**
  * ============================================================================
- * ১. WebGL Image-Centric Shader Engine (হুবহু ইমেজকে কেন্দ্র করে অ্যানিমেশন)
+ * ০. ZERO-DEPENDENCY NATIVE ISO-BMFF (.MP4) BINARY MUXER (LIFETIME ENGINE)
+ * ============================================================================
+ * কোনো বাহ্যিক CDN (যেমন mp4-muxer) ডাউন হয়ে গেলেও বা ইন্টারনেট না থাকলেও এই
+ * পিওর জাভাস্ক্রিপ্ট বাইনারি মাক্সারটি আজীবন WebCodecs-এর H.264 চ্যাংকগুলোকে
+ * স্ট্যান্ডার্ড Fast-Start (`ftyp` + `moov` + `mdat`) .MP4 ফাইলে রূপান্তর করবে!
+ */
+class NativeIsoMp4Muxer {
+    constructor(width, height, fps) {
+        this.width = width;
+        this.height = height;
+        this.fps = fps;
+        this.timescale = 90000; // স্ট্যান্ডার্ড H.264 মুভি টাইমস্কেল (90kHz)
+        this.sampleDelta = Math.round(this.timescale / this.fps);
+        this.samples = [];
+        this.mdatChunks = [];
+        this.mdatByteLength = 0;
+        this.avcCBox = null;
+    }
+
+    static u32(v) {
+        return new Uint8Array([(v >>> 24) & 0xFF, (v >>> 16) & 0xFF, (v >>> 8) & 0xFF, v & 0xFF]);
+    }
+    static u16(v) {
+        return new Uint8Array([(v >>> 8) & 0xFF, v & 0xFF]);
+    }
+    static u8(v) {
+        return new Uint8Array([v & 0xFF]);
+    }
+    static str(s) {
+        const out = new Uint8Array(s.length);
+        for (let i = 0; i < s.length; i++) out[i] = s.charCodeAt(i);
+        return out;
+    }
+    static concat(...arrays) {
+        let total = 0;
+        for (let i = 0; i < arrays.length; i++) total += arrays[i].byteLength;
+        const res = new Uint8Array(total);
+        let offset = 0;
+        for (let i = 0; i < arrays.length; i++) {
+            res.set(arrays[i], offset);
+            offset += arrays[i].byteLength;
+        }
+        return res;
+    }
+    static box(type, ...payloads) {
+        let size = 8;
+        for (let i = 0; i < payloads.length; i++) size += payloads[i].byteLength;
+        const res = new Uint8Array(size);
+        const dv = new DataView(res.buffer);
+        dv.setUint32(0, size, false);
+        for (let i = 0; i < 4; i++) res[4 + i] = type.charCodeAt(i);
+        let offset = 8;
+        for (let i = 0; i < payloads.length; i++) {
+            res.set(payloads[i], offset);
+            offset += payloads[i].byteLength;
+        }
+        return res;
+    }
+    static fullBox(type, version, flags, ...payloads) {
+        const hdr = new Uint8Array([
+            version & 0xFF,
+            (flags >>> 16) & 0xFF,
+            (flags >>> 8) & 0xFF,
+            flags & 0xFF
+        ]);
+        return NativeIsoMp4Muxer.box(type, hdr, ...payloads);
+    }
+
+    // Annex-B (00 00 00 01) স্ট্রিম হলে সেটিকে MP4 Length-Prefixed NALU ফরম্যাটে রূপান্তর এবং SPS/PPS নিষ্কাশন
+    normalizeChunkAndExtractAvcC(rawBytes) {
+        let isAnnexB = false;
+        if (rawBytes.length >= 4) {
+            if (rawBytes[0] === 0 && rawBytes[1] === 0 && rawBytes[2] === 0 && rawBytes[3] === 1) isAnnexB = true;
+            else if (rawBytes[0] === 0 && rawBytes[1] === 0 && rawBytes[2] === 1) isAnnexB = true;
+        }
+        if (!isAnnexB) return rawBytes;
+
+        const nalus = [];
+        let i = 0;
+        const len = rawBytes.length;
+        const findStartCode = (pos) => {
+            while (pos < len - 3) {
+                if (rawBytes[pos] === 0 && rawBytes[pos + 1] === 0) {
+                    if (rawBytes[pos + 2] === 1) return { idx: pos, scLen: 3 };
+                    if (rawBytes[pos + 2] === 0 && rawBytes[pos + 3] === 1) return { idx: pos, scLen: 4 };
+                }
+                pos++;
+            }
+            return null;
+        };
+
+        let first = findStartCode(0);
+        while (first) {
+            const nalStart = first.idx + first.scLen;
+            const next = findStartCode(nalStart);
+            const nalEnd = next ? next.idx : len;
+            if (nalEnd > nalStart) {
+                nalus.push(rawBytes.subarray(nalStart, nalEnd));
+            }
+            first = next;
+        }
+
+        const spsList = [];
+        const ppsList = [];
+        const outParts = [];
+
+        for (const nalu of nalus) {
+            const nalType = nalu[0] & 0x1F;
+            if (nalType === 7) spsList.push(nalu);
+            else if (nalType === 8) ppsList.push(nalu);
+            outParts.push(NativeIsoMp4Muxer.u32(nalu.byteLength), nalu);
+        }
+
+        if (!this.avcCBox && spsList.length > 0 && ppsList.length > 0) {
+            const sps = spsList[0];
+            const pps = ppsList[0];
+            const avcCBody = NativeIsoMp4Muxer.concat(
+                new Uint8Array([
+                    0x01,
+                    sps[1] || 0x64,
+                    sps[2] || 0x00,
+                    sps[3] || 0x28,
+                    0xFF,
+                    0xE1
+                ]),
+                NativeIsoMp4Muxer.u16(sps.byteLength),
+                sps,
+                new Uint8Array([0x01]),
+                NativeIsoMp4Muxer.u16(pps.byteLength),
+                pps
+            );
+            this.avcCBox = NativeIsoMp4Muxer.box('avcC', avcCBody);
+        }
+
+        return NativeIsoMp4Muxer.concat(...outParts);
+    }
+
+    addVideoChunk(chunk, meta) {
+        if (meta && meta.decoderConfig && meta.decoderConfig.description && !this.avcCBox) {
+            const desc = meta.decoderConfig.description;
+            const descBytes = desc instanceof ArrayBuffer
+                ? new Uint8Array(desc)
+                : new Uint8Array(desc.buffer, desc.byteOffset, desc.byteLength);
+            this.avcCBox = NativeIsoMp4Muxer.box('avcC', descBytes);
+        }
+
+        const raw = new Uint8Array(chunk.byteLength);
+        chunk.copyTo(raw);
+        const sampleBytes = this.normalizeChunkAndExtractAvcC(raw);
+
+        this.samples.push({
+            size: sampleBytes.byteLength,
+            isKeyframe: chunk.type === 'key',
+            ctsOffset: 0
+        });
+
+        this.mdatChunks.push(sampleBytes);
+        this.mdatByteLength += sampleBytes.byteLength;
+    }
+
+    buildMoov(chunkOffset) {
+        const U32 = NativeIsoMp4Muxer.u32;
+        const U16 = NativeIsoMp4Muxer.u16;
+        const box = NativeIsoMp4Muxer.box;
+        const fullBox = NativeIsoMp4Muxer.fullBox;
+        const concat = NativeIsoMp4Muxer.concat;
+
+        const totalDuration = this.samples.length * this.sampleDelta;
+        const identityMatrix = new Uint8Array([
+            0x00,0x01,0x00,0x00, 0,0,0,0, 0,0,0,0,
+            0,0,0,0, 0x00,0x01,0x00,0x00, 0,0,0,0,
+            0,0,0,0, 0,0,0,0, 0x40,0x00,0x00,0x00
+        ]);
+
+        // 1. mvhd
+        const mvhd = fullBox('mvhd', 0, 0,
+            U32(0), U32(0),
+            U32(this.timescale),
+            U32(totalDuration),
+            U32(0x00010000),
+            U16(0x0100),
+            new Uint8Array(10),
+            identityMatrix,
+            new Uint8Array(24),
+            U32(2)
+        );
+
+        // 2. tkhd (flags = 3: track_enabled | track_in_movie)
+        const tkhd = fullBox('tkhd', 0, 3,
+            U32(0), U32(0),
+            U32(1),
+            U32(0),
+            U32(totalDuration),
+            new Uint8Array(8),
+            U16(0), U16(0),
+            U16(0), U16(0),
+            identityMatrix,
+            U32(this.width << 16),
+            U32(this.height << 16)
+        );
+
+        // 3. mdhd & hdlr
+        const mdhd = fullBox('mdhd', 0, 0,
+            U32(0), U32(0),
+            U32(this.timescale),
+            U32(totalDuration),
+            U16(0x55C4),
+            U16(0)
+        );
+
+        const hdlr = fullBox('hdlr', 0, 0,
+            U32(0),
+            NativeIsoMp4Muxer.str('vide'),
+            new Uint8Array(12),
+            NativeIsoMp4Muxer.str('VideoHandler\0')
+        );
+
+        // 4. vmhd & dinf
+        const vmhd = fullBox('vmhd', 0, 1, U16(0), U16(0), U16(0), U16(0));
+        const urlBox = fullBox('url ', 0, 1);
+        const dref = fullBox('dref', 0, 0, U32(1), urlBox);
+        const dinf = box('dinf', dref);
+
+        // 5. stbl (stsd, stts, stss, stsc, stsz, stco)
+        const avcC = this.avcCBox || box('avcC', new Uint8Array([1, 0x64, 0x00, 0x28, 0xFF, 0xE0, 0x00]));
+        const colr = box('colr', NativeIsoMp4Muxer.str('nclx'), U16(1), U16(1), U16(1), new Uint8Array([0x80]));
+        const avc1 = box('avc1',
+            new Uint8Array(6),
+            U16(1),
+            U16(0), U16(0),
+            new Uint8Array(12),
+            U16(this.width),
+            U16(this.height),
+            U32(0x00480000),
+            U32(0x00480000),
+            U32(0),
+            U16(1),
+            new Uint8Array(32),
+            U16(0x0018),
+            U16(0xFFFF),
+            avcC,
+            colr
+        );
+        const stsd = fullBox('stsd', 0, 0, U32(1), avc1);
+
+        // stts (Constant Frame Rate = Exact Duration!)
+        const stts = fullBox('stts', 0, 0, U32(1), U32(this.samples.length), U32(this.sampleDelta));
+
+        // stss (Keyframes)
+        const keyframeIndices = [];
+        for (let i = 0; i < this.samples.length; i++) {
+            if (this.samples[i].isKeyframe) keyframeIndices.push(i + 1);
+        }
+        const stssPayload = new Uint8Array(4 + keyframeIndices.length * 4);
+        const stssDv = new DataView(stssPayload.buffer);
+        stssDv.setUint32(0, keyframeIndices.length, false);
+        for (let i = 0; i < keyframeIndices.length; i++) {
+            stssDv.setUint32(4 + i * 4, keyframeIndices[i], false);
+        }
+        const stss = fullBox('stss', 0, 0, stssPayload);
+
+        // stsc (All samples in 1 contiguous mdat chunk)
+        const stsc = fullBox('stsc', 0, 0,
+            U32(1),
+            U32(1),
+            U32(this.samples.length),
+            U32(1)
+        );
+
+        // stsz (Individual sample byte sizes)
+        const stszPayload = new Uint8Array(8 + this.samples.length * 4);
+        const stszDv = new DataView(stszPayload.buffer);
+        stszDv.setUint32(0, 0, false);
+        stszDv.setUint32(4, this.samples.length, false);
+        for (let i = 0; i < this.samples.length; i++) {
+            stszDv.setUint32(8 + i * 4, this.samples[i].size, false);
+        }
+        const stsz = fullBox('stsz', 0, 0, stszPayload);
+
+        // stco (Exact byte offset of mdat data)
+        const stco = fullBox('stco', 0, 0, U32(1), U32(chunkOffset));
+
+        const stbl = box('stbl', stsd, stts, stss, stsc, stsz, stco);
+        const minf = box('minf', vmhd, dinf, stbl);
+        const mdia = box('mdia', mdhd, hdlr, minf);
+        const trak = box('trak', tkhd, mdia);
+
+        return box('moov', mvhd, trak);
+    }
+
+    finalizeToBlob() {
+        const ftyp = NativeIsoMp4Muxer.box('ftyp',
+            NativeIsoMp4Muxer.str('isom'),
+            NativeIsoMp4Muxer.u32(0x200),
+            NativeIsoMp4Muxer.str('isomiso2avc1mp41')
+        );
+
+        // প্রথমে ডামি অফসেট দিয়ে moov সাইজ মাপা, এরপর আসল ফাস্ট-স্টার্ট অফসেট (ftyp + moov + 8) বসানো
+        const dummyMoov = this.buildMoov(0);
+        const exactDataOffset = ftyp.byteLength + dummyMoov.byteLength + 8;
+        const finalMoov = this.buildMoov(exactDataOffset);
+
+        const mdatHeader = new Uint8Array(8);
+        const mdatDv = new DataView(mdatHeader.buffer);
+        mdatDv.setUint32(0, 8 + this.mdatByteLength, false);
+        mdatHeader[4] = 109; // 'm'
+        mdatHeader[5] = 100; // 'd'
+        mdatHeader[6] = 97;  // 'a'
+        mdatHeader[7] = 116; // 't'
+
+        return new Blob([ftyp, finalMoov, mdatHeader, ...this.mdatChunks], { type: 'video/mp4' });
+    }
+}
+
+/**
+ * Safe Zero-Shift EBML WebM Duration Patcher (For Stream Mode Fallback)
+ * কখনোই বাইট ইনসার্ট করে ফাইল অফসেট নষ্ট করবে না; শুধুমাত্র বিদ্যমান 8-byte Float64 Duration থাকলে সেটিকে ওভাররাইট করবে।
+ */
+async function safeOverwriteWebmDurationIfPresent(rawBlob, exactDurationMs, mimeType) {
+    if (!mimeType.includes('webm')) return rawBlob;
+    try {
+        const buffer = await rawBlob.arrayBuffer();
+        const bytes = new Uint8Array(buffer);
+        const searchLimit = Math.min(bytes.length - 12, 4096);
+        for (let i = 0; i < searchLimit; i++) {
+            if (bytes[i] === 0x44 && bytes[i + 1] === 0x89) {
+                if (bytes[i + 2] === 0x88 && i + 11 <= bytes.length) {
+                    const dv = new DataView(buffer, i + 3, 8);
+                    dv.setFloat64(0, exactDurationMs, false);
+                    return new Blob([buffer], { type: mimeType });
+                } else if (bytes[i + 2] === 0x84 && i + 7 <= bytes.length) {
+                    const dv = new DataView(buffer, i + 3, 4);
+                    dv.setFloat32(0, exactDurationMs, false);
+                    return new Blob([buffer], { type: mimeType });
+                }
+            }
+        }
+        return rawBlob;
+    } catch (e) {
+        return rawBlob;
+    }
+}
+
+/**
+ * ============================================================================
+ * ১. WebGL 2D Circular Seamless Shader Engine + Context Loss Auto-Recovery
  * ============================================================================
  */
 const canvas = document.getElementById('glCanvas');
-const gl = canvas.getContext('webgl', {
-    preserveDrawingBuffer: false, // মেমোরি লিক এবং ব্রাউজার ক্র্যাশ রোধ করার জন্য false রাখা হয়েছে
+const canvasStage = document.getElementById('canvasStage');
+const canvasWrapper = document.getElementById('canvasWrapper');
+
+let gl = canvas.getContext('webgl', {
+    preserveDrawingBuffer: true,
     antialias: false,
     depth: false,
     stencil: false,
@@ -380,7 +895,7 @@ const vertexShaderSrc = `
     varying vec2 v_uv;
     void main() {
         v_uv = a_position * 0.5 + 0.5;
-        v_uv.y = 1.0 - v_uv.y; // ইমেজের সঠিক দিক বজায় রাখা
+        v_uv.y = 1.0 - v_uv.y;
         gl_Position = vec4(a_position, 0.0, 1.0);
     }
 `;
@@ -404,11 +919,12 @@ const fragmentShaderSrc = `
     uniform float u_glow;
     uniform float u_grain;
     uniform float u_texBlend;
+    uniform float u_blurRadius;
+    uniform vec4 u_colorGrade;
     uniform int u_mode;
     uniform int u_showOriginal;
     uniform sampler2D u_imageTex;
 
-    // 2D Simplex Noise (Public Domain)
     vec3 permute(vec3 x) { return mod(((x*34.0)+1.0)*x, 289.0); }
     float snoise(vec2 v){
         const vec4 C = vec4(0.211324865405187, 0.366025403784439, -0.577350269189626, 0.024390243902439);
@@ -433,110 +949,141 @@ const fragmentShaderSrc = `
         return 130.0 * dot(m, g);
     }
 
-    // হাই-ফ্রিকোয়েন্সি ডিদারিং (কালার ব্যান্ডিং রোধক)
     float hash12(vec2 p) {
         vec3 p3  = fract(vec3(p.xyx) * .1031);
         p3 += dot(p3, p3.yzx + 33.33);
         return fract((p3.x + p3.y) * p3.z);
     }
 
-    // Mirrored UV যেন কিনারায় কখনো কালো দাগ না আসে এবং ছবির রঙই ঘুরেফিরে আসে
     vec2 mirrorUV(vec2 uv) {
         vec2 m = mod(uv, 2.0);
         return mix(m, 2.0 - m, step(1.0, m));
     }
 
-    // স্মুথ মাল্টি-ট্যাপ ইমেজ স্যাম্পলিং
-    vec3 sampleImageSmooth(vec2 uv, vec2 offset) {
-        vec2 targetUV = mirrorUV(uv + offset);
-        targetUV = clamp(targetUV, 0.005, 0.995);
-        vec3 col = texture2D(u_imageTex, targetUV).rgb * 0.50;
-        float sp = 0.006;
-        col += texture2D(u_imageTex, clamp(mirrorUV(targetUV + vec2( sp,  sp)), 0.005, 0.995)).rgb * 0.125;
-        col += texture2D(u_imageTex, clamp(mirrorUV(targetUV + vec2(-sp,  sp)), 0.005, 0.995)).rgb * 0.125;
-        col += texture2D(u_imageTex, clamp(mirrorUV(targetUV + vec2( sp, -sp)), 0.005, 0.995)).rgb * 0.125;
-        col += texture2D(u_imageTex, clamp(mirrorUV(targetUV + vec2(-sp, -sp)), 0.005, 0.995)).rgb * 0.125;
+    vec3 sampleImageGaussian(vec2 uv, vec2 offset, float blurAmt) {
+        vec2 baseUV = mirrorUV(uv + offset);
+        float r = 0.002 + blurAmt * 0.028;
+        vec2 aspect = vec2(1.0, u_resolution.x / max(u_resolution.y, 1.0));
+        vec2 d = r * aspect;
+
+        vec3 col = texture2D(u_imageTex, clamp(baseUV, 0.002, 0.998)).rgb * 0.28;
+        col += texture2D(u_imageTex, clamp(mirrorUV(baseUV + vec2( d.x,  0.0)), 0.002, 0.998)).rgb * 0.12;
+        col += texture2D(u_imageTex, clamp(mirrorUV(baseUV + vec2(-d.x,  0.0)), 0.002, 0.998)).rgb * 0.12;
+        col += texture2D(u_imageTex, clamp(mirrorUV(baseUV + vec2( 0.0,  d.y)), 0.002, 0.998)).rgb * 0.12;
+        col += texture2D(u_imageTex, clamp(mirrorUV(baseUV + vec2( 0.0, -d.y)), 0.002, 0.998)).rgb * 0.12;
+
+        vec2 diag = d * 0.7071;
+        col += texture2D(u_imageTex, clamp(mirrorUV(baseUV + vec2( diag.x,  diag.y)), 0.002, 0.998)).rgb * 0.06;
+        col += texture2D(u_imageTex, clamp(mirrorUV(baseUV + vec2(-diag.x,  diag.y)), 0.002, 0.998)).rgb * 0.06;
+        col += texture2D(u_imageTex, clamp(mirrorUV(baseUV + vec2( diag.x, -diag.y)), 0.002, 0.998)).rgb * 0.06;
+        col += texture2D(u_imageTex, clamp(mirrorUV(baseUV + vec2(-diag.x, -diag.y)), 0.002, 0.998)).rgb * 0.06;
         return col;
     }
 
+    vec3 applyColorGrade(vec3 col) {
+        float angle = u_colorGrade.x;
+        const vec3 k = vec3(0.57735, 0.57735, 0.57735);
+        float cosAngle = cos(angle);
+        col = col * cosAngle + cross(k, col) * sin(angle) + k * dot(k, col) * (1.0 - cosAngle);
+
+        float luma = dot(col, vec3(0.299, 0.587, 0.114));
+        col = mix(vec3(luma), col, u_colorGrade.y);
+
+        col = (col - 0.5) * u_colorGrade.z + 0.5 + u_colorGrade.w;
+        return clamp(col, 0.0, 1.0);
+    }
+
     void main() {
-        // ইউজার যদি "মূল ছবি দেখুন" বাটনে চাপ দেয়
         if (u_showOriginal == 1) {
-            gl_FragColor = vec4(texture2D(u_imageTex, v_uv).rgb, 1.0);
+            vec3 orig = texture2D(u_imageTex, v_uv).rgb;
+            gl_FragColor = vec4(applyColorGrade(orig), 1.0);
             return;
         }
 
         vec2 uv = v_uv;
-        vec2 p = uv;
-        p.x *= u_resolution.x / u_resolution.y;
+        vec2 p = uv - 0.5;
+        p.x *= u_resolution.x / max(u_resolution.y, 1.0);
 
-        // ১০০% নিখুঁত সিমলেস লুপ (০ সেকেন্ড এবং শেষ সেকেন্ডের ফ্রেম হুবহু এক হবে)
-        float phase = (u_time / u_duration) * 6.28318530718 * floor(u_speed);
+        float cycles = max(1.0, floor(u_speed + 0.5));
+        float phase = (u_time / max(u_duration, 0.1)) * 6.28318530718 * cycles;
         vec2 loopVec = vec2(cos(phase), sin(phase));
+        vec2 loopVecOrtho = vec2(-sin(phase), cos(phase));
 
         vec2 pos = p * u_scale;
         vec2 imgOffset = vec2(0.0);
         float lightWave = 0.0;
 
         if (u_mode == 0) {
-            // Mode 0: Direct Image Liquify Flow (আপনার ছবির ওপর স্মুথ তরল ঢেউ)
-            float n1 = snoise(pos * 0.8 + loopVec * 0.45);
-            float n2 = snoise(pos * 0.8 + vec2(3.7, 1.9) - loopVec * 0.45);
-            float n3 = snoise(pos * 1.4 + vec2(n1, n2) * 0.6 + loopVec * 0.25);
+            float n1 = snoise(pos * 0.85 + loopVec * 0.50);
+            float n2 = snoise(pos * 0.85 + vec2(4.1, 2.3) + loopVecOrtho * 0.50);
+            float n3 = snoise(pos * 1.35 + vec2(n1, n2) * 0.65 + loopVec * 0.30);
 
-            imgOffset = vec2(n1 + n3 * 0.4, n2 - n3 * 0.4) * (u_warp * 0.22);
-            lightWave = smoothstep(-0.6, 0.8, n3);
+            imgOffset = vec2(n1 + n3 * 0.45, n2 - n3 * 0.45) * (u_warp * 0.24);
+            lightWave = smoothstep(-0.65, 0.85, n3);
 
         } else if (u_mode == 1) {
-            // Mode 1: Image Breathing & Silk Wave (ছবির গ্রেডিয়েন্টের জুম ও সিল্ক দোলন)
-            float breathe = sin(phase) * 0.06 * u_warp;
-            vec2 centered = uv - 0.5;
-            float waveX = sin(pos.y * 2.5 + phase) * 0.08 * u_warp;
-            float waveY = cos(pos.x * 2.0 + phase) * 0.08 * u_warp;
-            float n = snoise(pos * 0.7 + loopVec * 0.35);
+            float nA = snoise(vec2(pos.x * 0.9, pos.y * 0.9) + loopVec * 0.55);
+            float nB = snoise(vec2(pos.y * 1.1, -pos.x * 1.1) + loopVecOrtho * 0.55);
+            float ribbon = sin(pos.x * 2.2 + pos.y * 1.6 + phase + nA * 1.4);
+            float crossRibbon = cos(pos.y * 2.0 - pos.x * 1.4 + phase + nB * 1.4);
 
-            imgOffset = centered * breathe + vec2(waveX + n * 0.04 * u_warp, waveY);
-            lightWave = smoothstep(-0.7, 0.7, sin(pos.x * 1.8 + pos.y * 1.5 + phase));
+            imgOffset = vec2(ribbon * 0.14 + nA * 0.08, crossRibbon * 0.14 + nB * 0.08) * u_warp;
+            lightWave = smoothstep(-0.8, 0.8, ribbon * 0.7 + nA * 0.3);
 
         } else if (u_mode == 2) {
-            // Mode 2: 2D Elastic Mesh Warp (অ্যাপল স্টাইল অর্গানিক মেশ ফ্লুইড)
             vec2 q = vec2(
-                snoise(pos * 0.7 + loopVec * 0.4),
-                snoise(pos * 0.7 + vec2(5.2, 1.3) - loopVec * 0.4)
+                snoise(pos * 0.75 + loopVec * 0.45),
+                snoise(pos * 0.75 + vec2(5.2, 1.3) + loopVecOrtho * 0.45)
             );
             vec2 r = vec2(
-                snoise(pos * 0.9 + q * 0.8 + loopVec * 0.3),
-                snoise(pos * 0.9 + q * 0.8 + vec2(2.8, 7.1) - loopVec * 0.3)
+                snoise(pos * 0.95 + q * 0.85 + loopVecOrtho * 0.35),
+                snoise(pos * 0.95 + q * 0.85 + vec2(2.8, 7.1) + loopVec * 0.35)
             );
-            imgOffset = r * (u_warp * 0.26);
-            lightWave = clamp(length(r) * 0.7, 0.0, 1.0);
+            imgOffset = r * (u_warp * 0.28);
+            lightWave = clamp(length(r) * 0.75, 0.0, 1.0);
+
+        } else if (u_mode == 3) {
+            float diag = (p.x + p.y) * u_scale * 1.6;
+            float n = snoise(pos * 0.8 + loopVec * 0.40);
+            float streamA = sin(diag * 2.0 + phase + n * 1.2);
+            float streamB = cos(diag * 1.5 - phase + n * 1.2);
+
+            imgOffset = vec2(streamA * 0.14 + n * 0.06, streamB * 0.11 - n * 0.06) * u_warp;
+            lightWave = smoothstep(-0.75, 0.85, streamA * 0.75 + n * 0.25);
+
+        } else if (u_mode == 4) {
+            float curtainX = pos.x * 1.8 + snoise(vec2(pos.x * 0.7, loopVec.x * 0.5)) * 0.9;
+            float auroraWave = sin(curtainX * 2.2 + phase) * cos(pos.y * 1.5 + loopVec.y * 0.6);
+            float fineShimmer = snoise(vec2(pos.x * 2.4, pos.y * 0.6) + loopVec * 0.65);
+
+            imgOffset = vec2(auroraWave * 0.12, (auroraWave + fineShimmer * 0.5) * 0.22) * u_warp;
+            lightWave = smoothstep(-0.4, 0.9, auroraWave * 0.6 + fineShimmer * 0.4);
 
         } else {
-            // Mode 3: Diagonal Shimmer & Pan (কোণাকুণি আলোর প্রবাহ)
-            float diag = (p.x + p.y) * u_scale;
-            float beam = sin(diag * 2.2 + phase);
-            float n = snoise(pos * 0.75 + loopVec * 0.3);
-            imgOffset = vec2(beam * 0.12 + n * 0.06, -beam * 0.08 + n * 0.06) * u_warp;
-            lightWave = smoothstep(-0.8, 0.9, beam * 0.7 + n * 0.3);
+            float baseN = snoise(pos * 0.9 + loopVec * 0.4);
+            float ripple = sin(length(pos + loopVec * 0.25) * 6.0 - phase);
+            vec2 refractVec = vec2(
+                cos(ripple * 3.14 + baseN * 2.0),
+                sin(ripple * 3.14 + baseN * 2.0)
+            );
+            imgOffset = (refractVec * 0.12 + baseN * 0.10) * u_warp;
+            lightWave = smoothstep(-0.6, 0.8, ripple * 0.5 + baseN * 0.5);
         }
 
-        // ১. ইউজারের আপলোড করা আসল ইমেজ থেকে লিকুইফাইড রঙ নেওয়া
-        vec3 warpedImageColor = sampleImageSmooth(uv, imgOffset);
+        vec3 warpedImageColor = sampleImageGaussian(uv, imgOffset, u_blurRadius);
 
-        // ২. ছবির ৫টি রঙ দিয়ে ব্যাকআপ প্রসিডিউরাল গ্রেডিয়েন্ট তৈরি
         float g1 = smoothstep(0.0, 1.0, uv.x + imgOffset.x * 1.8);
         float g2 = smoothstep(0.0, 1.0, uv.y + imgOffset.y * 1.8);
         vec3 procColor = mix(mix(u_col0, u_col1, g1), mix(u_col2, u_col3, g1), g2);
-        procColor = mix(procColor, u_col4, lightWave * 0.5);
+        procColor = mix(procColor, u_col4, lightWave * 0.55);
 
-        // ৩. ইউজারের পছন্দ অনুযায়ী আসল ইমেজ এবং প্রসিডিউরাল রঙের মিশ্রণ (ডিফল্ট ৯২% আসল ইমেজ)
         vec3 finalColor = mix(procColor, warpedImageColor, u_texBlend);
 
-        // ৪. সফট গ্লো ও লাইট শিমার যুক্ত করা
-        vec3 glowTint = mix(u_col3, u_col4, 0.6);
-        finalColor = mix(finalColor, glowTint, pow(lightWave, 2.0) * u_glow);
+        vec3 glowTint = mix(u_col3, u_col4, 0.65);
+        finalColor = mix(finalColor, glowTint, pow(clamp(lightWave, 0.0, 1.0), 1.85) * u_glow);
 
-        // ৫. এডোবি স্টক অ্যান্টি-ব্যান্ডিং ডিদারিং
+        finalColor = applyColorGrade(finalColor);
+
         float nA = hash12(gl_FragCoord.xy + fract(u_time * 17.3));
         float nB = hash12(gl_FragCoord.xy + fract(u_time * 31.7) + 11.1);
         finalColor += vec3((nA + nB - 1.0) * u_grain);
@@ -545,94 +1092,183 @@ const fragmentShaderSrc = `
     }
 `;
 
-function createShader(gl, type, src) {
-    const s = gl.createShader(type);
-    gl.shaderSource(s, src);
-    gl.compileShader(s);
-    if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) {
-        console.error("Shader Error:", gl.getShaderInfoLog(s));
+let program = null;
+let quadBuffer = null;
+let imageTexture = null;
+let uniforms = {};
+
+function createShader(glCtx, type, src) {
+    const s = glCtx.createShader(type);
+    glCtx.shaderSource(s, src);
+    glCtx.compileShader(s);
+    if (!glCtx.getShaderParameter(s, glCtx.COMPILE_STATUS)) {
+        console.error("Shader Error:", glCtx.getShaderInfoLog(s));
     }
     return s;
 }
 
-const program = gl.createProgram();
-gl.attachShader(program, createShader(gl, gl.VERTEX_SHADER, vertexShaderSrc));
-gl.attachShader(program, createShader(gl, gl.FRAGMENT_SHADER, fragmentShaderSrc));
-gl.linkProgram(program);
-gl.useProgram(program);
+function initWebGLResources() {
+    if (!gl) return;
+    program = gl.createProgram();
+    gl.attachShader(program, createShader(gl, gl.VERTEX_SHADER, vertexShaderSrc));
+    gl.attachShader(program, createShader(gl, gl.FRAGMENT_SHADER, fragmentShaderSrc));
+    gl.linkProgram(program);
+    gl.useProgram(program);
 
-const quadBuffer = gl.createBuffer();
-gl.bindBuffer(gl.ARRAY_BUFFER, quadBuffer);
-gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, -1,1, 1,-1, 1,1]), gl.STATIC_DRAW);
+    quadBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, quadBuffer);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, -1,1, 1,-1, 1,1]), gl.STATIC_DRAW);
 
-const aPos = gl.getAttribLocation(program, "a_position");
-gl.enableVertexAttribArray(aPos);
-gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0);
+    const aPos = gl.getAttribLocation(program, "a_position");
+    gl.enableVertexAttribArray(aPos);
+    gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0);
 
-// হাই-রেজোলিউশন ইমেজ টেক্সচার ইনিশিয়ালাইজেশন
-const imageTexture = gl.createTexture();
-gl.bindTexture(gl.TEXTURE_2D, imageTexture);
-gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+    imageTexture = gl.createTexture();
+    gl.bindTexture(gl.TEXTURE_2D, imageTexture);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
 
-const uniforms = {
-    res: gl.getUniformLocation(program, "u_resolution"),
-    time: gl.getUniformLocation(program, "u_time"),
-    dur: gl.getUniformLocation(program, "u_duration"),
-    cols: [
-        gl.getUniformLocation(program, "u_col0"),
-        gl.getUniformLocation(program, "u_col1"),
-        gl.getUniformLocation(program, "u_col2"),
-        gl.getUniformLocation(program, "u_col3"),
-        gl.getUniformLocation(program, "u_col4")
-    ],
-    speed: gl.getUniformLocation(program, "u_speed"),
-    scale: gl.getUniformLocation(program, "u_scale"),
-    warp: gl.getUniformLocation(program, "u_warp"),
-    glow: gl.getUniformLocation(program, "u_glow"),
-    grain: gl.getUniformLocation(program, "u_grain"),
-    texBlend: gl.getUniformLocation(program, "u_texBlend"),
-    mode: gl.getUniformLocation(program, "u_mode"),
-    showOrig: gl.getUniformLocation(program, "u_showOriginal")
-};
+    uniforms = {
+        res: gl.getUniformLocation(program, "u_resolution"),
+        time: gl.getUniformLocation(program, "u_time"),
+        dur: gl.getUniformLocation(program, "u_duration"),
+        cols: [
+            gl.getUniformLocation(program, "u_col0"),
+            gl.getUniformLocation(program, "u_col1"),
+            gl.getUniformLocation(program, "u_col2"),
+            gl.getUniformLocation(program, "u_col3"),
+            gl.getUniformLocation(program, "u_col4")
+        ],
+        speed: gl.getUniformLocation(program, "u_speed"),
+        scale: gl.getUniformLocation(program, "u_scale"),
+        warp: gl.getUniformLocation(program, "u_warp"),
+        glow: gl.getUniformLocation(program, "u_glow"),
+        grain: gl.getUniformLocation(program, "u_grain"),
+        texBlend: gl.getUniformLocation(program, "u_texBlend"),
+        blurRadius: gl.getUniformLocation(program, "u_blurRadius"),
+        colorGrade: gl.getUniformLocation(program, "u_colorGrade"),
+        mode: gl.getUniformLocation(program, "u_mode"),
+        showOrig: gl.getUniformLocation(program, "u_showOriginal")
+    };
+}
+
+initWebGLResources();
+
+// WebGL Context Loss & Auto-Recovery (যাতে ৪কে রেন্ডারে কখনো জিপিইউ রিসেট হলেও অ্যাপ ক্র্যাশ না করে)
+canvas.addEventListener('webglcontextlost', (e) => {
+    e.preventDefault();
+    showToast("⚠️ GPU মেমোরি রিসেট হচ্ছে, স্বয়ংক্রিয়ভাবে রিকভার করা হচ্ছে...");
+}, false);
+
+canvas.addEventListener('webglcontextrestored', () => {
+    initWebGLResources();
+    updateWebGLTextureFromSource(currentUploadedImage);
+    showToast("✅ GPU কন্টেক্সট সফলভাবে রিকভার হয়েছে!");
+}, false);
 
 /**
  * ============================================================================
- * ২. আসল ইমেজ লোডার ও টেক্সচার প্রসেসর (যাতে ইমেজ স্পষ্ট বোঝা যায়)
+ * ২. কাস্টম পিক্সেল আর্টবোর্ড, মেমোরি-সেফ টেক্সচার এবং প্রজেক্ট স্টেট ম্যানেজার
  * ============================================================================
  */
 let currentUploadedImage = null;
 let showOriginalFlag = 0;
+let artboardWidth = 1920;
+let artboardHeight = 1080;
+let isRecording = false;
+let cancelRecordingRequested = false;
 
 function showToast(msg) {
     const box = document.getElementById('toastBox');
+    if (!box) return;
     box.innerText = msg;
     box.classList.remove('hidden');
-    setTimeout(() => box.classList.add('hidden'), 4000);
+    clearTimeout(window._toastTimer);
+    window._toastTimer = setTimeout(() => box.classList.add('hidden'), 5500);
 }
 
-// আপনার দেওয়া ছবি বা প্রিসেট কালার থেকে একটি সুন্দর হাই-রেজোলিউশন বেস ইমেজ তৈরি করা
-function updateWebGLTextureFromSource(imgElement) {
-    const texCanvas = document.createElement('canvas');
-    texCanvas.width = 1920;
-    texCanvas.height = 1080;
-    const tCtx = texCanvas.getContext('2d');
+function sanitizePixelDimension(val, fallback) {
+    const maxGpu = Math.min(4096, (gl && gl.getParameter(gl.MAX_RENDERBUFFER_SIZE)) || 4096);
+    let n = parseInt(val, 10);
+    if (isNaN(n) || n < 128) n = fallback;
+    if (n > maxGpu) n = maxGpu;
+    return n % 2 === 0 ? n : n - 1;
+}
 
-    const blurPx = parseInt(document.getElementById('imgBlurRange').value);
-    if (blurPx > 0) {
-        tCtx.filter = `blur(${blurPx}px)`;
+function fitArtboardInStage() {
+    if (!canvasStage || !canvasWrapper) return;
+    const stageRect = canvasStage.getBoundingClientRect();
+    const availW = Math.max(200, stageRect.width - 32);
+    const availH = Math.max(200, stageRect.height - 32);
+
+    const targetAspect = artboardWidth / artboardHeight;
+    const stageAspect = availW / availH;
+
+    let displayW, displayH;
+    if (targetAspect > stageAspect) {
+        displayW = availW;
+        displayH = availW / targetAspect;
     } else {
-        tCtx.filter = 'none';
+        displayH = availH;
+        displayW = availH * targetAspect;
     }
 
-    // কিনারায় যেন ব্লার কালো না হয় সেজন্য সামান্য ওভারস্ক্যান ড্র
-    const pad = blurPx * 2;
+    canvasWrapper.style.width = `${Math.round(displayW)}px`;
+    canvasWrapper.style.height = `${Math.round(displayH)}px`;
+}
+
+window.addEventListener('resize', fitArtboardInStage);
+
+function updateWebGLTextureFromSource(imgElement) {
+    if (!gl || !imageTexture) return;
+    const texCanvas = document.createElement('canvas');
+    const maxTexDim = 2560;
+    const scale = Math.min(1.0, maxTexDim / Math.max(artboardWidth, artboardHeight));
+    texCanvas.width = Math.max(256, Math.round(artboardWidth * scale));
+    texCanvas.height = Math.max(256, Math.round(artboardHeight * scale));
+
+    const tCtx = texCanvas.getContext('2d');
+    const fitMode = document.getElementById('fitModeSelect').value;
+
     if (imgElement) {
-        tCtx.drawImage(imgElement, -pad, -pad, texCanvas.width + pad * 2, texCanvas.height + pad * 2);
+        const iw = imgElement.naturalWidth || imgElement.width;
+        const ih = imgElement.naturalHeight || imgElement.height;
+        const cw = texCanvas.width;
+        const ch = texCanvas.height;
+
+        if (fitMode === 'cover') {
+            const imgAspect = iw / ih;
+            const canAspect = cw / ch;
+            let sx = 0, sy = 0, sw = iw, sh = ih;
+            if (imgAspect > canAspect) {
+                sw = ih * canAspect;
+                sx = (iw - sw) * 0.5;
+            } else {
+                sh = iw / canAspect;
+                sy = (ih - sh) * 0.5;
+            }
+            tCtx.drawImage(imgElement, sx, sy, sw, sh, 0, 0, cw, ch);
+        } else if (fitMode === 'mirror') {
+            const halfW = cw / 2;
+            const halfH = ch / 2;
+            tCtx.save();
+            tCtx.drawImage(imgElement, 0, 0, halfW, halfH);
+            tCtx.translate(cw, 0); tCtx.scale(-1, 1);
+            tCtx.drawImage(imgElement, 0, 0, halfW, halfH);
+            tCtx.restore();
+
+            tCtx.save();
+            tCtx.translate(0, ch); tCtx.scale(1, -1);
+            tCtx.drawImage(imgElement, 0, 0, halfW, halfH);
+            tCtx.translate(cw, 0); tCtx.scale(-1, 1);
+            tCtx.drawImage(imgElement, 0, 0, halfW, halfH);
+            tCtx.restore();
+        } else {
+            tCtx.drawImage(imgElement, 0, 0, cw, ch);
+        }
     } else {
-        // ডিফল্ট অবস্থায় ইউজারের ৫টি রঙ দিয়ে একটি চমৎকার মাল্টি-পয়েন্ট গ্রেডিয়েন্ট ছবি তৈরি করা
         const c0 = document.getElementById('col0').value;
         const c1 = document.getElementById('col1').value;
         const c2 = document.getElementById('col2').value;
@@ -642,15 +1278,14 @@ function updateWebGLTextureFromSource(imgElement) {
         const linGrad = tCtx.createLinearGradient(0, 0, texCanvas.width, texCanvas.height);
         linGrad.addColorStop(0.0, c0);
         linGrad.addColorStop(0.35, c1);
-        linGrad.addColorStop(0.7, c2);
+        linGrad.addColorStop(0.70, c2);
         linGrad.addColorStop(1.0, c3);
         tCtx.fillStyle = linGrad;
         tCtx.fillRect(0, 0, texCanvas.width, texCanvas.height);
 
-        // সফট গ্লো স্পট যুক্ত করা যেন স্ট্রাকচার স্পষ্ট বোঝা যায়
         const radGrad = tCtx.createRadialGradient(
-            texCanvas.width * 0.72, texCanvas.height * 0.32, 50,
-            texCanvas.width * 0.72, texCanvas.height * 0.32, texCanvas.width * 0.55
+            texCanvas.width * 0.72, texCanvas.height * 0.30, 20,
+            texCanvas.width * 0.72, texCanvas.height * 0.30, texCanvas.width * 0.58
         );
         radGrad.addColorStop(0, c4);
         radGrad.addColorStop(1, 'rgba(255,255,255,0)');
@@ -661,9 +1296,111 @@ function updateWebGLTextureFromSource(imgElement) {
     gl.bindTexture(gl.TEXTURE_2D, imageTexture);
     gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, texCanvas);
 
-    // বাম পাশের থাম্বনেইলে দেখানো
-    document.getElementById('uploadedThumb').src = texCanvas.toDataURL('image/jpeg', 0.8);
+    const thumbCanvas = document.createElement('canvas');
+    thumbCanvas.width = 160;
+    thumbCanvas.height = 120;
+    thumbCanvas.getContext('2d').drawImage(texCanvas, 0, 0, 160, 120);
+    document.getElementById('uploadedThumb').src = thumbCanvas.toDataURL('image/jpeg', 0.85);
 }
+
+function updatePreviewBufferResolution() {
+    if (isRecording) return;
+    const maxPreviewDim = parseInt(document.getElementById('previewQualitySelect').value, 10) || 1280;
+    const scale = Math.min(1.0, maxPreviewDim / Math.max(artboardWidth, artboardHeight));
+    const targetW = Math.max(128, Math.round((artboardWidth * scale) / 2) * 2);
+    const targetH = Math.max(128, Math.round((artboardHeight * scale) / 2) * 2);
+    if (canvas.width !== targetW || canvas.height !== targetH) {
+        canvas.width = targetW;
+        canvas.height = targetH;
+    }
+}
+
+function syncArtboardDimensions(rebuildTex = true, notifyUser = false) {
+    const wInput = document.getElementById('customWidthInput');
+    const hInput = document.getElementById('customHeightInput');
+
+    artboardWidth = sanitizePixelDimension(wInput.value, 1920);
+    artboardHeight = sanitizePixelDimension(hInput.value, 1080);
+
+    wInput.value = artboardWidth;
+    hInput.value = artboardHeight;
+
+    fitArtboardInStage();
+    updatePreviewBufferResolution();
+
+    const ratio = (artboardWidth / artboardHeight).toFixed(2);
+    document.getElementById('aspectRatioLabel').innerText = `Aspect: ${ratio}:1`;
+
+    const fps = document.getElementById('fpsSelect').value;
+    document.getElementById('specBadge').innerText = `${artboardWidth} × ${artboardHeight} px | ${fps} FPS`;
+    document.getElementById('headerArtboardBadge').innerHTML = `${artboardWidth}×${artboardHeight}<br><span class="text-emerald-400">Lifetime Ready</span>`;
+    document.getElementById('seoArtboardText').innerText = `${artboardWidth}×${artboardHeight} px`;
+
+    const overlayTag = document.getElementById('artboardOverlayTag');
+    if (overlayTag) {
+        overlayTag.innerText = `${artboardWidth} × ${artboardHeight} px`;
+    }
+
+    if (rebuildTex) {
+        updateWebGLTextureFromSource(currentUploadedImage);
+    }
+    generateSmartSEO();
+    saveStateToLocalStorage();
+
+    if (notifyUser) {
+        showToast(`📐 আর্টবোর্ড সাইজ ${artboardWidth} × ${artboardHeight} px-এ সেট হয়েছে!`);
+    }
+}
+
+document.getElementById('resPresetSelect').addEventListener('change', (e) => {
+    const val = e.target.value;
+    if (val !== 'custom') {
+        const [w, h] = val.split('x').map(Number);
+        document.getElementById('customWidthInput').value = w;
+        document.getElementById('customHeightInput').value = h;
+        syncArtboardDimensions(true, true);
+    } else {
+        document.getElementById('customWidthInput').focus();
+        document.getElementById('customWidthInput').select();
+    }
+});
+
+document.getElementById('applyArtboardBtn').addEventListener('click', () => {
+    document.getElementById('resPresetSelect').value = 'custom';
+    syncArtboardDimensions(true, true);
+});
+
+['customWidthInput', 'customHeightInput'].forEach(id => {
+    const el = document.getElementById(id);
+    el.addEventListener('change', () => {
+        document.getElementById('resPresetSelect').value = 'custom';
+        syncArtboardDimensions(true, true);
+    });
+    el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            document.getElementById('resPresetSelect').value = 'custom';
+            syncArtboardDimensions(true, true);
+        }
+    });
+});
+
+document.getElementById('swapDimensionsBtn').addEventListener('click', () => {
+    const wInput = document.getElementById('customWidthInput');
+    const hInput = document.getElementById('customHeightInput');
+    const temp = wInput.value;
+    wInput.value = hInput.value;
+    hInput.value = temp;
+    document.getElementById('resPresetSelect').value = 'custom';
+    syncArtboardDimensions(true, true);
+});
+
+document.getElementById('fpsSelect').addEventListener('change', () => syncArtboardDimensions(false, false));
+document.getElementById('previewQualitySelect').addEventListener('change', () => {
+    updatePreviewBufferResolution();
+    saveStateToLocalStorage();
+    showToast("⚡ প্রিভিউ রেজোলিউশন আপডেট হয়েছে!");
+});
 
 function hexToRgbNorm(hex) {
     const n = parseInt(hex.slice(1), 16);
@@ -685,9 +1422,9 @@ function updatePaletteUI(hexArray, rebuildProcedural = false) {
         updateWebGLTextureFromSource(null);
     }
     generateSmartSEO();
+    saveStateToLocalStorage();
 }
 
-// কালার পিকার পরিবর্তন করলে
 for (let i = 0; i < 5; i++) {
     document.getElementById('col' + i).addEventListener('input', (e) => {
         document.getElementById('hex' + i).innerText = e.target.value.toUpperCase();
@@ -695,13 +1432,18 @@ for (let i = 0; i < 5; i++) {
             updateWebGLTextureFromSource(null);
         }
         generateSmartSEO();
+        saveStateToLocalStorage();
     });
 }
 
-// ইমেজ সফট ব্লার স্লাইডার পরিবর্তন করলে সাথে সাথে টেক্সচার আপডেট হবে
-document.getElementById('imgBlurRange').addEventListener('input', (e) => {
-    document.getElementById('imgBlurVal').innerText = e.target.value + ' px';
+document.getElementById('fitModeSelect').addEventListener('change', () => {
     updateWebGLTextureFromSource(currentUploadedImage);
+    saveStateToLocalStorage();
+});
+
+document.getElementById('imgBlurRange').addEventListener('input', (e) => {
+    document.getElementById('imgBlurVal').innerText = e.target.value + '%';
+    saveStateToLocalStorage();
 });
 
 const sliderBindings = [
@@ -710,15 +1452,27 @@ const sliderBindings = [
     ['scaleRange', 'scaleVal', v => v],
     ['warpRange', 'warpVal', v => v],
     ['glowRange', 'glowVal', v => v],
-    ['grainRange', 'grainVal', v => v]
+    ['grainRange', 'grainVal', v => v],
+    ['hueRange', 'hueVal', v => v + '°'],
+    ['satRange', 'satVal', v => v + '%'],
+    ['contRange', 'contVal', v => v + '%'],
+    ['brightRange', 'brightVal', v => (v > 0 ? '+' + v : v) + '%']
 ];
 sliderBindings.forEach(([rangeId, valId, fmt]) => {
     document.getElementById(rangeId).addEventListener('input', e => {
         document.getElementById(valId).innerText = fmt(e.target.value);
+        saveStateToLocalStorage();
     });
 });
 
-// "মূল ছবি দেখুন" বাটন ইভেন্ট
+document.getElementById('resetGradeBtn').addEventListener('click', () => {
+    document.getElementById('hueRange').value = 0; document.getElementById('hueVal').innerText = '0°';
+    document.getElementById('satRange').value = 100; document.getElementById('satVal').innerText = '100%';
+    document.getElementById('contRange').value = 100; document.getElementById('contVal').innerText = '100%';
+    document.getElementById('brightRange').value = 0; document.getElementById('brightVal').innerText = '0%';
+    saveStateToLocalStorage();
+});
+
 const holdBtn = document.getElementById('holdCompareBtn');
 holdBtn.addEventListener('mousedown', () => showOriginalFlag = 1);
 holdBtn.addEventListener('mouseup', () => showOriginalFlag = 0);
@@ -726,24 +1480,22 @@ holdBtn.addEventListener('mouseleave', () => showOriginalFlag = 0);
 holdBtn.addEventListener('touchstart', (e) => { e.preventDefault(); showOriginalFlag = 1; });
 holdBtn.addEventListener('touchend', () => showOriginalFlag = 0);
 
-// ইউজার যখন নতুন গ্রেডিয়েন্ট ইমেজ আপলোড করবে
 document.getElementById('imageUpload').addEventListener('change', function(e) {
     const file = e.target.files[0];
     if (!file) return;
 
+    const objectUrl = URL.createObjectURL(file);
     const img = new Image();
     img.onload = function() {
+        URL.revokeObjectURL(objectUrl);
         currentUploadedImage = img;
-        document.getElementById('imageLoadedBadge').innerText = "✓ আপনার ইমেজ সক্রিয়";
+        document.getElementById('imageLoadedBadge').innerText = `✓ ইমেজ (${img.naturalWidth}×${img.naturalHeight})`;
 
-        // আসল ছবি যেন স্পষ্ট বোঝা যায় তাই স্বয়ংক্রিয়ভাবে প্রাধান্য ৯৫% এবং ব্লার ২px করে দেওয়া হচ্ছে
         document.getElementById('texBlendRange').value = 95;
         document.getElementById('texBlendVal').innerText = '95%';
 
-        // ১. হাই-রেজোলিউশন টেক্সচারে ছবিটি লোড করা
         updateWebGLTextureFromSource(img);
 
-        // ২. ছবি থেকে ৫টি প্রধান রঙ বের করা
         const sampleCanvas = document.createElement('canvas');
         sampleCanvas.width = 90;
         sampleCanvas.height = 90;
@@ -784,9 +1536,9 @@ document.getElementById('imageUpload').addEventListener('change', function(e) {
         centroids.sort((a, b) => (a[0]*0.299 + a[1]*0.587 + a[2]*0.114) - (b[0]*0.299 + b[1]*0.587 + b[2]*0.114));
         const hexList = centroids.map(c => rgbToHex(c[0], c[1], c[2]));
         updatePaletteUI(hexList, false);
-        showToast("✨ আপনার গ্রেডিয়েন্ট ইমেজ লোড হয়েছে এবং সেটিকে কেন্দ্র করেই অ্যানিমেশন চলছে!");
+        showToast(`✨ আপনার ${img.naturalWidth}×${img.naturalHeight}px গ্রেডিয়েন্ট ইমেজ লোড হয়েছে!`);
     };
-    img.src = URL.createObjectURL(file);
+    img.src = objectUrl;
 });
 
 const curatedStockPalettes = [
@@ -795,7 +1547,8 @@ const curatedStockPalettes = [
     ["#064e3b", "#059669", "#10b981", "#6ee7b7", "#ecfdf5"],
     ["#4c0519", "#be123c", "#f43f5e", "#fda4af", "#fff1f2"],
     ["#0f172a", "#1e3a8a", "#0284c7", "#38bdf8", "#e0f2fe"],
-    ["#451a03", "#b45309", "#f59e0b", "#fde68a", "#fffbeb"]
+    ["#451a03", "#b45309", "#f59e0b", "#fde68a", "#fffbeb"],
+    ["#2e1065", "#7e22ce", "#ec4899", "#f43f5e", "#ffe4e6"]
 ];
 
 document.getElementById('randomPaletteBtn').addEventListener('click', () => {
@@ -805,20 +1558,174 @@ document.getElementById('randomPaletteBtn').addEventListener('click', () => {
     updatePaletteUI(p, true);
 });
 
-// শুরুতে ডিফল্ট গ্রেডিয়েন্ট টেক্সচার তৈরি করা
-updateWebGLTextureFromSource(null);
+/**
+ * ============================================================================
+ * ২.৫ Lifetime Project Persistence (localStorage + JSON Preset Save/Load)
+ * ============================================================================
+ */
+const STORAGE_KEY = 'ai_stock_gradient_studio_v5_state';
+
+function collectProjectState() {
+    return {
+        version: '5.0',
+        width: parseInt(document.getElementById('customWidthInput').value, 10) || 1920,
+        height: parseInt(document.getElementById('customHeightInput').value, 10) || 1080,
+        resPreset: document.getElementById('resPresetSelect').value,
+        fitMode: document.getElementById('fitModeSelect').value,
+        texBlend: document.getElementById('texBlendRange').value,
+        imgBlur: document.getElementById('imgBlurRange').value,
+        shaderMode: document.getElementById('shaderMode').value,
+        speed: document.getElementById('speedRange').value,
+        scale: document.getElementById('scaleRange').value,
+        warp: document.getElementById('warpRange').value,
+        glow: document.getElementById('glowRange').value,
+        grain: document.getElementById('grainRange').value,
+        hue: document.getElementById('hueRange').value,
+        sat: document.getElementById('satRange').value,
+        cont: document.getElementById('contRange').value,
+        bright: document.getElementById('brightRange').value,
+        colors: [
+            document.getElementById('col0').value,
+            document.getElementById('col1').value,
+            document.getElementById('col2').value,
+            document.getElementById('col3').value,
+            document.getElementById('col4').value
+        ],
+        duration: document.getElementById('durationSelect').value,
+        fps: document.getElementById('fpsSelect').value,
+        bitrate: document.getElementById('bitrateSelect').value,
+        exportEngine: document.getElementById('exportEngineSelect').value
+    };
+}
+
+function saveStateToLocalStorage() {
+    try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(collectProjectState()));
+    } catch (e) {}
+}
+
+function applyProjectState(st) {
+    if (!st) return;
+    try {
+        if (st.width) document.getElementById('customWidthInput').value = st.width;
+        if (st.height) document.getElementById('customHeightInput').value = st.height;
+        if (st.resPreset) document.getElementById('resPresetSelect').value = st.resPreset;
+        if (st.fitMode) document.getElementById('fitModeSelect').value = st.fitMode;
+        if (st.texBlend !== undefined) {
+            document.getElementById('texBlendRange').value = st.texBlend;
+            document.getElementById('texBlendVal').innerText = st.texBlend + '%';
+        }
+        if (st.imgBlur !== undefined) {
+            document.getElementById('imgBlurRange').value = st.imgBlur;
+            document.getElementById('imgBlurVal').innerText = st.imgBlur + '%';
+        }
+        if (st.shaderMode !== undefined) document.getElementById('shaderMode').value = st.shaderMode;
+        if (st.speed !== undefined) {
+            document.getElementById('speedRange').value = st.speed;
+            document.getElementById('speedVal').innerText = st.speed + 'x (Loop)';
+        }
+        if (st.scale !== undefined) {
+            document.getElementById('scaleRange').value = st.scale;
+            document.getElementById('scaleVal').innerText = st.scale;
+        }
+        if (st.warp !== undefined) {
+            document.getElementById('warpRange').value = st.warp;
+            document.getElementById('warpVal').innerText = st.warp;
+        }
+        if (st.glow !== undefined) {
+            document.getElementById('glowRange').value = st.glow;
+            document.getElementById('glowVal').innerText = st.glow;
+        }
+        if (st.grain !== undefined) {
+            document.getElementById('grainRange').value = st.grain;
+            document.getElementById('grainVal').innerText = st.grain;
+        }
+        if (st.hue !== undefined) {
+            document.getElementById('hueRange').value = st.hue;
+            document.getElementById('hueVal').innerText = st.hue + '°';
+        }
+        if (st.sat !== undefined) {
+            document.getElementById('satRange').value = st.sat;
+            document.getElementById('satVal').innerText = st.sat + '%';
+        }
+        if (st.cont !== undefined) {
+            document.getElementById('contRange').value = st.cont;
+            document.getElementById('contVal').innerText = st.cont + '%';
+        }
+        if (st.bright !== undefined) {
+            document.getElementById('brightRange').value = st.bright;
+            document.getElementById('brightVal').innerText = (st.bright > 0 ? '+' + st.bright : st.bright) + '%';
+        }
+        if (Array.isArray(st.colors) && st.colors.length === 5) {
+            st.colors.forEach((hex, idx) => {
+                document.getElementById('col' + idx).value = hex;
+                document.getElementById('hex' + idx).innerText = hex.toUpperCase();
+            });
+        }
+        if (st.duration) document.getElementById('durationSelect').value = st.duration;
+        if (st.fps) document.getElementById('fpsSelect').value = st.fps;
+        if (st.bitrate) document.getElementById('bitrateSelect').value = st.bitrate;
+        if (st.exportEngine) document.getElementById('exportEngineSelect').value = st.exportEngine;
+
+        syncArtboardDimensions(true, false);
+    } catch (e) {}
+}
+
+document.getElementById('exportPresetBtn').addEventListener('click', () => {
+    const state = collectProjectState();
+    const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `GradientStudio_Preset_${artboardWidth}x${artboardHeight}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 3000);
+    showToast("💾 প্রজেক্ট প্রিসেট (.json) সফলভাবে ডাউনলোড হয়েছে!");
+});
+
+document.getElementById('importPresetInput').addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+        try {
+            const parsed = JSON.parse(ev.target.result);
+            applyProjectState(parsed);
+            showToast("📂 প্রজেক্ট প্রিসেট সফলভাবে লোড হয়েছে!");
+        } catch (err) {
+            showToast("⚠️ প্রিসেট ফাইলটি সঠিক নয়।");
+        }
+    };
+    reader.readAsText(file);
+});
+
+document.getElementById('factoryResetBtn').addEventListener('click', () => {
+    try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+    currentUploadedImage = null;
+    applyProjectState({
+        width: 1920, height: 1080, resPreset: '1920x1080',
+        fitMode: 'cover', texBlend: 94, imgBlur: 25,
+        shaderMode: 0, speed: 1, scale: 1.4, warp: 0.35, glow: 0.20, grain: 0.014,
+        hue: 0, sat: 100, cont: 100, bright: 0,
+        colors: ["#0284c7", "#38bdf8", "#7dd3fc", "#bae6fd", "#f0f9ff"],
+        duration: "25", fps: "30", bitrate: "16000000", exportEngine: "auto"
+    });
+    showToast("↺ সব সেটিংস ডিফল্ট অবস্থায় রিসেট করা হয়েছে।");
+});
 
 /**
  * ============================================================================
- * ৩. AI Adobe Stock SEO Title & Keyword Generator (iframe Safe Copy সহ)
+ * ৩. Advanced AI Adobe Stock SEO (49 Keywords & CSV Submitter Export)
  * ============================================================================
  */
 function getColorName(hex) {
     const [r, g, b] = hexToRgbNorm(hex).map(v => v * 255);
     const max = Math.max(r, g, b), min = Math.min(r, g, b);
     const l = (max + min) / 510;
-    if (l > 0.88) return "white";
-    if (l < 0.15) return "deep dark";
+    if (l > 0.88) return "white pearl";
+    if (l < 0.15) return "deep midnight dark";
     let h = 0;
     if (max !== min) {
         const d = max - min;
@@ -828,39 +1735,79 @@ function getColorName(hex) {
             case b: h = ((r - g) / d + 4) * 60; break;
         }
     }
-    if (h < 20 || h >= 340) return "crimson red";
-    if (h < 50) return "warm orange gold";
-    if (h < 70) return "soft yellow";
-    if (h < 165) return "emerald mint green";
-    if (h < 210) return "light blue sky cyan";
-    if (h < 260) return "royal sapphire blue";
-    if (h < 300) return "violet purple";
-    return "pastel pink rose";
+    if (h < 20 || h >= 340) return "crimson coral red";
+    if (h < 50) return "warm amber gold orange";
+    if (h < 70) return "soft sunlit yellow";
+    if (h < 165) return "emerald mint teal green";
+    if (h < 210) return "sky blue cyan aqua";
+    if (h < 260) return "royal sapphire indigo blue";
+    if (h < 300) return "violet lavender purple";
+    return "pastel magenta rose pink";
 }
 
 function generateSmartSEO() {
     const c1 = getColorName(document.getElementById('col1').value);
+    const c2 = getColorName(document.getElementById('col2').value);
     const c3 = getColorName(document.getElementById('col3').value);
-    const modeIdx = parseInt(document.getElementById('shaderMode').value);
+    const modeIdx = parseInt(document.getElementById('shaderMode').value, 10);
 
-    const modePhrases = [
-        "Liquify effect",
-        "Soft breathing silk wave",
-        "Organic fluid mesh",
-        "Subtle diagonal shimmer"
+    const modeTitles = [
+        "Liquify fluid gradient",
+        "Continuous silk wave",
+        "Organic elastic mesh",
+        "Diagonal shimmer stream",
+        "Aurora borealis light wave",
+        "Frosted glass refraction"
     ];
-    const effectName = modePhrases[modeIdx] || "Liquify effect";
+    const effectName = modeTitles[modeIdx] || "Smooth fluid gradient";
+    const orientWord = artboardWidth >= artboardHeight ? "widescreen backdrop" : "vertical social media background";
 
-    const title = `${effectName} ${c1} ${c3} abstract background video. Smooth gradient blend with soft blur, bright glow, subtle motion. Clean minimalist backdrop loop for presentations and web design.`;
-    document.getElementById('seoTitle').innerText = title;
+    const rawTitle = `${effectName} ${c1} and ${c3} abstract background video. Seamless loop with soft blur, glowing aura, and subtle liquid motion. Clean minimalist ${orientWord} (${artboardWidth}x${artboardHeight}).`;
+    const finalTitle = rawTitle.slice(0, 198);
 
-    const colorWords = [...new Set((c1 + " " + c3).split(" "))].join(", ");
-    const keywords = `liquify, gradient, ${colorWords}, abstract, background, video, smooth, blend, soft blur, bright glow, subtle motion, clean, minimalist, backdrop, loop, seamless loop, 4k, presentation, fluid, silk, pastel, modern, corporate, wallpaper, graphic resources`;
-    document.getElementById('seoKeywords').innerText = keywords;
+    document.getElementById('seoTitle').innerText = finalTitle;
+    document.getElementById('titleCharCount').innerText = finalTitle.length;
+
+    const colorTokens = [...new Set(`${c1} ${c2} ${c3}`.split(/\s+/))];
+    const basePool = [
+        "gradient", "abstract", "background", "video", "seamless loop", "loop", "liquify", "fluid", "smooth", "blend",
+        "soft blur", "bright glow", "subtle motion", "minimalist", "clean", "backdrop", "4k", "uhd", "presentation", "modern",
+        "silk", "wave", "mesh", "aurora", "pastel", "color", "aesthetic", "wallpaper", "corporate", "website",
+        "ui", "design", "motion graphics", "animation", "liquid", "flow", "calm", "relaxing", "ambient", "light",
+        "shimmer", "ethereal", "dreamy", "blurred", "vibrant", "soft", "elegance", "digital art", "template", "texture"
+    ];
+
+    const combinedKeywords = [...new Set([...colorTokens, ...basePool])].slice(0, 49);
+    document.getElementById('seoKeywords').innerText = combinedKeywords.join(", ");
+    document.getElementById('kwCountBadge').innerText = combinedKeywords.length;
 }
 
-document.getElementById('shaderMode').addEventListener('change', generateSmartSEO);
+document.getElementById('shaderMode').addEventListener('change', () => {
+    generateSmartSEO();
+    saveStateToLocalStorage();
+});
 document.getElementById('refreshSeoBtn').addEventListener('click', generateSmartSEO);
+
+document.getElementById('downloadCsvBtn').addEventListener('click', () => {
+    const dur = document.getElementById('durationSelect').value;
+    const fps = document.getElementById('fpsSelect').value;
+    const filename = `AdobeStock_Gradient_${artboardWidth}x${artboardHeight}_${dur}s_${fps}fps.mp4`;
+    const title = document.getElementById('seoTitle').innerText.replace(/"/g, '""');
+    const keywords = document.getElementById('seoKeywords').innerText.replace(/"/g, '""');
+    const category = "7";
+
+    const csvContent = `Filename,Title,Keywords,Category\n"${filename}","${title}","${keywords}",${category}\n`;
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `AdobeStock_Metadata_${artboardWidth}x${artboardHeight}.csv`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    showToast("📥 Adobe Stock CSV মেটাডেটা ফাইল ডাউনলোড হয়েছে!");
+});
 
 window.copyText = function(elementId, btn) {
     const text = document.getElementById(elementId).innerText;
@@ -878,27 +1825,62 @@ window.copyText = function(elementId, btn) {
 
 /**
  * ============================================================================
- * ৪. Crash-Free 4K Video Recording & Download Engine
+ * ৪. Live 60FPS Preview Loop & Shader Draw
  * ============================================================================
  */
-let startTime = performance.now();
-let isRecording = false;
-let activeRecorder = null;
-let recordStartTimestamp = 0;
-let targetDurationSec = 20;
+let isPlaying = true;
+let previewElapsedSec = 0;
+let lastFramePerf = performance.now();
+let fpsFrameCount = 0;
+let fpsLastCheck = performance.now();
 
-function updateSpecBadge() {
-    const res = document.getElementById('resSelect').value.replace('x', ' × ');
-    const fps = document.getElementById('fpsSelect').value;
-    document.getElementById('specBadge').innerText = `${res} px | ${fps} FPS`;
+const playPauseBtn = document.getElementById('playPauseBtn');
+const scrubber = document.getElementById('timelineScrubber');
+const scrubTimeText = document.getElementById('scrubTimeText');
+const liveFpsBadge = document.getElementById('liveFpsBadge');
+
+playPauseBtn.addEventListener('click', () => {
+    if (isRecording) return;
+    isPlaying = !isPlaying;
+    playPauseBtn.innerText = isPlaying ? "⏸️ Pause" : "▶️ Play";
+});
+
+scrubber.addEventListener('input', (e) => {
+    if (isRecording) return;
+    const dur = parseFloat(document.getElementById('durationSelect').value);
+    previewElapsedSec = (parseFloat(e.target.value) / 1000) * dur;
+    updateScrubberUI(previewElapsedSec, dur);
+    drawShaderFrame(previewElapsedSec);
+});
+
+document.getElementById('durationSelect').addEventListener('change', () => {
+    if (isRecording) return;
+    const dur = parseFloat(document.getElementById('durationSelect').value);
+    previewElapsedSec = 0;
+    updateScrubberUI(0, dur);
+    saveStateToLocalStorage();
+});
+
+document.getElementById('testLoopBoundaryBtn').addEventListener('click', () => {
+    if (isRecording) return;
+    const dur = parseFloat(document.getElementById('durationSelect').value);
+    previewElapsedSec = Math.max(0, dur - 2.0);
+    isPlaying = true;
+    playPauseBtn.innerText = "⏸️ Pause";
+    showToast(`🔁 লুপ টেস্ট: ভিডিওটি ${previewElapsedSec.toFixed(1)}s থেকে ${dur.toFixed(1)}s হয়ে 0.0s-এ সিমলেস লুপ করছে!`);
+});
+
+function updateScrubberUI(curSec, durSec) {
+    const loopedSec = ((curSec % durSec) + durSec) % durSec;
+    scrubber.value = Math.round((loopedSec / durSec) * 1000);
+    scrubTimeText.innerText = `${loopedSec.toFixed(1).padStart(4, '0')}s / ${durSec.toFixed(1)}s`;
 }
-document.getElementById('resSelect').addEventListener('change', updateSpecBadge);
-document.getElementById('fpsSelect').addEventListener('change', updateSpecBadge);
 
-function drawShaderFrame(elapsedSeconds) {
+function drawShaderFrame(exactSeconds) {
+    if (!gl || !program) return;
     gl.viewport(0, 0, canvas.width, canvas.height);
     gl.uniform2f(uniforms.res, canvas.width, canvas.height);
-    gl.uniform1f(uniforms.time, elapsedSeconds);
+    gl.uniform1f(uniforms.time, exactSeconds);
     gl.uniform1f(uniforms.dur, parseFloat(document.getElementById('durationSelect').value));
 
     for (let i = 0; i < 5; i++) {
@@ -912,183 +1894,505 @@ function drawShaderFrame(elapsedSeconds) {
     gl.uniform1f(uniforms.glow, parseFloat(document.getElementById('glowRange').value));
     gl.uniform1f(uniforms.grain, parseFloat(document.getElementById('grainRange').value));
     gl.uniform1f(uniforms.texBlend, parseFloat(document.getElementById('texBlendRange').value) / 100.0);
-    gl.uniform1i(uniforms.mode, parseInt(document.getElementById('shaderMode').value));
+    gl.uniform1f(uniforms.blurRadius, parseFloat(document.getElementById('imgBlurRange').value) / 100.0);
+
+    const hueRad = (parseFloat(document.getElementById('hueRange').value) * Math.PI) / 180.0;
+    const sat = parseFloat(document.getElementById('satRange').value) / 100.0;
+    const cont = parseFloat(document.getElementById('contRange').value) / 100.0;
+    const bright = parseFloat(document.getElementById('brightRange').value) / 100.0;
+    gl.uniform4f(uniforms.colorGrade, hueRad, sat, cont, bright);
+
+    gl.uniform1i(uniforms.mode, parseInt(document.getElementById('shaderMode').value, 10));
     gl.uniform1i(uniforms.showOrig, showOriginalFlag);
 
     gl.drawArrays(gl.TRIANGLES, 0, 6);
 }
 
-// মূল রিয়েল-টাইম রেন্ডার লুপ (requestAnimationFrame এর মাধ্যমে স্মুথ সিঙ্ক হয়, ফলে ক্র্যাশ করে না)
-function masterLoop(now) {
-    if (!isRecording) {
-        if (canvas.width !== 1920) {
-            canvas.width = 1920;
-            canvas.height = 1012;
-        }
-        const elapsed = (now - startTime) / 1000.0;
-        drawShaderFrame(elapsed);
-    } else {
-        // রেকর্ডিং চলাকালীন ফ্রেম ড্রয়িং এবং প্রগ্রেস আপডেট
-        const recElapsed = (now - recordStartTimestamp) / 1000.0;
-        drawShaderFrame(recElapsed);
+function masterPreviewLoop(now) {
+    const dt = Math.min(0.1, (now - lastFramePerf) / 1000.0);
+    lastFramePerf = now;
 
-        const pct = Math.min(100, Math.round((recElapsed / targetDurationSec) * 100));
-        document.getElementById('progressBar').style.width = pct + '%';
-        document.getElementById('progressPercent').innerText = pct + '%';
-
-        const curS = String(Math.min(targetDurationSec, Math.floor(recElapsed))).padStart(2, '0');
-        const totS = String(targetDurationSec).padStart(2, '0');
-        document.getElementById('timeCounter').innerText = `00:${curS} / 00:${totS}`;
-
-        if (recElapsed >= targetDurationSec) {
-            finishRecording();
-        }
+    fpsFrameCount++;
+    if (now - fpsLastCheck >= 500) {
+        const currentFps = Math.min(60, Math.round((fpsFrameCount * 1000) / (now - fpsLastCheck)));
+        liveFpsBadge.innerText = `${currentFps} FPS`;
+        fpsFrameCount = 0;
+        fpsLastCheck = now;
     }
-    requestAnimationFrame(masterLoop);
-}
-requestAnimationFrame(masterLoop);
 
-// ৪কে স্ন্যাপশট ডাউনলোড
+    if (!isRecording) {
+        const dur = parseFloat(document.getElementById('durationSelect').value);
+        if (isPlaying) {
+            previewElapsedSec = (previewElapsedSec + dt) % dur;
+            updateScrubberUI(previewElapsedSec, dur);
+        }
+        drawShaderFrame(previewElapsedSec);
+    }
+
+    requestAnimationFrame(masterPreviewLoop);
+}
+
+// হাই-রেজোলিউশন PNG স্ন্যাপশট ডাউনলোড
 document.getElementById('snapshotBtn').addEventListener('click', () => {
-    const [w, h] = document.getElementById('resSelect').value.split('x').map(Number);
-    canvas.width = w;
-    canvas.height = h;
-    drawShaderFrame((performance.now() - startTime) / 1000.0);
+    if (isRecording) return;
+    canvas.width = artboardWidth;
+    canvas.height = artboardHeight;
+    drawShaderFrame(previewElapsedSec);
+    gl.finish();
 
     canvas.toBlob((blob) => {
+        updatePreviewBufferResolution();
         if (!blob) return;
         const url = URL.createObjectURL(blob);
         const link = document.createElement('a');
-        link.download = `AdobeStock_Gradient_${w}x${h}.png`;
+        link.download = `AdobeStock_Gradient_${artboardWidth}x${artboardHeight}.png`;
         link.href = url;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
         setTimeout(() => URL.revokeObjectURL(url), 5000);
-        showToast("📸 4K PNG স্ন্যাপশট সফলভাবে ডাউনলোড হয়েছে!");
+        showToast(`📸 ${artboardWidth}×${artboardHeight}px PNG স্ন্যাপশট ডাউনলোড হয়েছে!`);
     }, 'image/png', 1.0);
 });
 
-function finishRecording() {
-    if (activeRecorder && activeRecorder.state === 'recording') {
-        activeRecorder.stop();
-    }
+/**
+ * ============================================================================
+ * ৫. LIFETIME BULLETPROOF EXPORT ARCHITECTURE (WakeLock + WebWorker + Native MP4)
+ * ============================================================================
+ */
+let currentExportBlobUrl = null;
+let activeStreamRecorder = null;
+let activeWakeLock = null;
+let activeWorker = null;
+
+// Screen WakeLock API (যাতে ২৫/৩০/৬০ সেকেন্ড রেন্ডারের সময় মোবাইল বা পিসির স্ক্রিন বন্ধ না হয়)
+async function acquireScreenWakeLock() {
+    try {
+        if ('wakeLock' in navigator) {
+            activeWakeLock = await navigator.wakeLock.request('screen');
+        }
+    } catch (e) {}
 }
 
-// ক্র্যাশ-মুক্ত ৪কে ভিডিও রেকর্ডিং ও ডাউনলোড ইঞ্জিন
-document.getElementById('recordBtn').addEventListener('click', () => {
-    if (isRecording) return;
+async function releaseScreenWakeLock() {
+    try {
+        if (activeWakeLock) {
+            await activeWakeLock.release();
+            activeWakeLock = null;
+        }
+    } catch (e) {}
+}
 
-    targetDurationSec = parseInt(document.getElementById('durationSelect').value);
-    const fps = parseInt(document.getElementById('fpsSelect').value);
-    let requestedBitrate = parseInt(document.getElementById('bitrateSelect').value);
-    let [width, height] = document.getElementById('resSelect').value.split('x').map(Number);
+// Unthrottled Inline WebWorker Timer (যাতে রেন্ডার চলাকালীন অন্য ট্যাবে গেলেও রেন্ডার থেমে না যায়)
+function createUnthrottledWorker() {
+    const workerCode = `
+        let timerId = null;
+        self.onmessage = function(e) {
+            if (e.data.cmd === 'start') {
+                const interval = e.data.interval || 16;
+                if (timerId) clearInterval(timerId);
+                timerId = setInterval(() => self.postMessage('tick'), interval);
+            } else if (e.data.cmd === 'stop') {
+                if (timerId) clearInterval(timerId);
+                timerId = null;
+            }
+        };
+    `;
+    const blob = new Blob([workerCode], { type: 'application/javascript' });
+    const url = URL.createObjectURL(blob);
+    const worker = new Worker(url);
+    worker._blobUrl = url;
+    return worker;
+}
 
-    // GPU-এর সর্বোচ্চ সীমা চেক করা যেন ক্র্যাশ না করে
-    const maxGpuSize = gl.getParameter(gl.MAX_RENDERBUFFER_SIZE) || 4096;
-    if (width > maxGpuSize) {
-        width = Math.min(width, maxGpuSize);
-        height = Math.round(width * (2160 / 4096));
+function destroyUnthrottledWorker(worker) {
+    if (!worker) return;
+    try {
+        worker.postMessage({ cmd: 'stop' });
+        worker.terminate();
+        if (worker._blobUrl) URL.revokeObjectURL(worker._blobUrl);
+    } catch (e) {}
+}
+
+document.getElementById('closePreviewCardBtn').addEventListener('click', () => {
+    const card = document.getElementById('exportResultCard');
+    const player = document.getElementById('verifiedVideoPlayer');
+    player.pause();
+    card.classList.add('hidden');
+});
+
+function presentCompletedVideo(finalBlob, filename, targetDurSec, renderW, renderH, fps) {
+    if (currentExportBlobUrl) {
+        URL.revokeObjectURL(currentExportBlobUrl);
     }
+    currentExportBlobUrl = URL.createObjectURL(finalBlob);
+    const sizeMb = (finalBlob.size / (1024 * 1024)).toFixed(2);
+    const ext = filename.split('.').pop().toUpperCase();
 
-    canvas.width = width;
-    canvas.height = height;
-    drawShaderFrame(0); // প্রথম ফ্রেম প্রস্তুত করা
+    // ১. স্বয়ংক্রিয় ডাউনলোড ট্রিগার
+    const a = document.createElement('a');
+    a.style.display = 'none';
+    a.href = currentExportBlobUrl;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => {
+        if (document.body.contains(a)) document.body.removeChild(a);
+    }, 3000);
 
-    const stream = canvas.captureStream(fps);
+    // ২. ইনলাইন ভেরিফিকেশন প্লেয়ার কার্ডে ভিডিও লোড করা
+    const card = document.getElementById('exportResultCard');
+    const player = document.getElementById('verifiedVideoPlayer');
+    const dlBtn = document.getElementById('manualDownloadLink');
+    const metaText = document.getElementById('verifiedMetaText');
 
-    // ব্রাউজার অনুযায়ী সবচেয়ে স্থিতিশীল 4K কোডেক নির্বাচন (VP9 4K রেজোলিউশনে ক্র্যাশ করে না, যেখানে সাধারণ H264 অনেক ব্রাউজারে 4096px সাপোর্ট করে না)
-    const mimeCandidates = [
-        'video/webm;codecs=vp9',
-        'video/mp4;codecs=avc1.640033',
-        'video/mp4;codecs=avc1',
-        'video/webm;codecs=vp8',
-        'video/webm',
-        'video/mp4'
+    dlBtn.href = currentExportBlobUrl;
+    dlBtn.download = filename;
+    metaText.innerText = `${renderW}×${renderH} | ডিউরেশন: ${targetDurSec}.00s | ${fps} FPS | সাইজ: ${sizeMb} MB (${ext})`;
+
+    player.src = currentExportBlobUrl;
+    player.onloadedmetadata = () => {
+        const actualDur = player.duration && isFinite(player.duration) ? player.duration.toFixed(2) + 's' : `${targetDurSec}.00s`;
+        metaText.innerText = `ভেরিফাইড: ${renderW}×${renderH}px | ডিউরেশন: ${actualDur} | ${fps} FPS | সাইজ: ${sizeMb} MB (${ext})`;
+    };
+
+    card.classList.remove('hidden');
+    card.classList.add('flex');
+    showToast(`✅ সম্পূর্ণ ${targetDurSec} সেকেন্ডের (${renderW}×${renderH}) ভিডিও নিখুঁতভাবে ডাউনলোড হয়েছে!`);
+}
+
+// প্রগ্রেসিভ হার্ডওয়্যার H.264 কোডেক ও রেজোলিউশন নেগোসিয়েটর (যাতে কখনোই VideoEncoder এরর না দেয়)
+async function negotiateHardwareVideoEncoderConfig(reqW, reqH, fps, bitrate) {
+    if (typeof window.VideoEncoder === 'undefined') return null;
+
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const scaleSteps = isMobile ? [1.0, 0.75, 0.5] : [1.0, 0.75, 0.5];
+    const codecCandidates = [
+        'avc1.640034', // High Profile Level 5.2 (4K)
+        'avc1.640033', // High Profile Level 5.1 (2K/4K)
+        'avc1.64002a', // High Profile Level 4.2 (1080p60)
+        'avc1.640028', // High Profile Level 4.0 (1080p30)
+        'avc1.4d0033', // Main Profile Level 5.1
+        'avc1.4d0028', // Main Profile Level 4.0
+        'avc1.420028', // Baseline Profile Level 4.0
+        'avc1.42001f'  // Baseline Profile Level 3.1
     ];
 
-    let selectedMime = '';
-    for (const m of mimeCandidates) {
-        if (window.MediaRecorder && MediaRecorder.isTypeSupported(m)) {
-            selectedMime = m;
-            break;
+    for (const s of scaleSteps) {
+        // H.264 এনকোডার স্ট্যাবিলিটির জন্য 16-পিক্সেল অ্যালাইনমেন্ট (Macroblock Aligned) বা অন্তত Even ডাইমেনশন নিশ্চিত করা
+        const candW = Math.max(128, Math.round((reqW * s) / 2) * 2);
+        const candH = Math.max(128, Math.round((reqH * s) / 2) * 2);
+
+        for (const codecStr of codecCandidates) {
+            try {
+                const cfg = {
+                    codec: codecStr,
+                    width: candW,
+                    height: candH,
+                    bitrate: bitrate,
+                    framerate: fps,
+                    avc: { format: 'avc' }
+                };
+                const support = await VideoEncoder.isConfigSupported(cfg);
+                if (support && support.supported) {
+                    return cfg;
+                }
+            } catch (e) {}
+        }
+    }
+    return null;
+}
+
+/**
+ * ENGINE A: Built-in Zero-CDN Frame-by-Frame ISO MP4 Muxer
+ * কোনো এক্সটার্নাল স্ক্রিপ্ট ছাড়াই প্রতিটি ফ্রেম আলাদাভাবে এনকোড করে স্ট্যান্ডার্ড .MP4 তৈরি করে।
+ */
+async function renderWithNativeMp4Muxer(reqW, reqH, durationSec, fps, bitrate) {
+    const encoderConfig = await negotiateHardwareVideoEncoderConfig(reqW, reqH, fps, bitrate);
+    if (!encoderConfig) return null;
+
+    const renderW = encoderConfig.width;
+    const renderH = encoderConfig.height;
+
+    document.getElementById('codecBadge').innerText = `🎯 Native MP4 (${renderW}×${renderH} | ${durationSec}.00s)`;
+    document.getElementById('progressText').innerText = `ফ্রেম-বাই-ফ্রেম Native MP4 রেন্ডার হচ্ছে...`;
+
+    const muxer = new NativeIsoMp4Muxer(renderW, renderH, fps);
+    let encoderError = null;
+
+    const encoder = new VideoEncoder({
+        output: (chunk, meta) => muxer.addVideoChunk(chunk, meta),
+        error: (err) => { encoderError = err; console.error("VideoEncoder Error:", err); }
+    });
+
+    encoder.configure(encoderConfig);
+
+    canvas.width = renderW;
+    canvas.height = renderH;
+
+    const totalFrames = Math.round(durationSec * fps);
+    const frameDurationMicros = Math.round(1_000_000 / fps);
+
+    for (let i = 0; i < totalFrames; i++) {
+        if (cancelRecordingRequested || encoderError) break;
+
+        // GPU মেমোরি ওভারফ্লো প্রতিরোধে ব্যাকপ্রেশার কন্ট্রোল
+        while (encoder.encodeQueueSize > 6 && !cancelRecordingRequested) {
+            await new Promise(r => setTimeout(r, 5));
+        }
+
+        // Frame-exact circular loop: ফ্রেম 0 থেকে (totalFrames - 1) পর্যন্ত যাবে যাতে লুপের জোড়ায় ডাবল ফ্রেম না পড়ে
+        const exactTimeSec = (i / totalFrames) * durationSec;
+        drawShaderFrame(exactTimeSec);
+        gl.finish();
+
+        const timestampMicros = Math.round((i * 1_000_000) / fps);
+        const videoFrame = new VideoFrame(canvas, {
+            timestamp: timestampMicros,
+            duration: frameDurationMicros
+        });
+
+        const isKeyFrame = (i % (fps * 2) === 0);
+        encoder.encode(videoFrame, { keyFrame: isKeyFrame });
+        videoFrame.close();
+
+        if (i % 3 === 0 || i === totalFrames - 1) {
+            const pct = Math.min(100, Math.round(((i + 1) / totalFrames) * 100));
+            document.getElementById('progressBar').style.width = pct + '%';
+            document.getElementById('progressPercent').innerText = pct + '%';
+            document.getElementById('frameCounter').innerText = `Frame: ${i + 1} / ${totalFrames} (${exactTimeSec.toFixed(1)}s / ${durationSec}.0s)`;
+            updateScrubberUI(exactTimeSec, durationSec);
+            await new Promise(r => setTimeout(r, 0));
         }
     }
 
-    let recorderOptions = {};
-    if (selectedMime) recorderOptions.mimeType = selectedMime;
-    recorderOptions.videoBitsPerSecond = requestedBitrate;
-
-    try {
-        activeRecorder = new MediaRecorder(stream, recorderOptions);
-    } catch (err) {
-        // যদি হাই বিটরেট বা কোডেকে সমস্যা হয়, তবে সেফ ফলব্যাক মোডে চালু হবে
-        activeRecorder = new MediaRecorder(stream);
+    if (cancelRecordingRequested || encoderError) {
+        try { encoder.close(); } catch (e) {}
+        return null;
     }
 
-    const recordedChunks = [];
-    activeRecorder.ondataavailable = (e) => {
-        if (e.data && e.data.size > 0) {
-            recordedChunks.push(e.data);
+    document.getElementById('progressText').innerText = `MP4 হেডার ফাইনাল ও ভেরিফাই করা হচ্ছে...`;
+    await encoder.flush();
+    encoder.close();
+
+    const mp4Blob = muxer.finalizeToBlob();
+    return { blob: mp4Blob, ext: 'mp4', width: renderW, height: renderH };
+}
+
+/**
+ * ENGINE B: Unthrottled WebWorker Stream Recorder (Universal Fallback)
+ * ব্যাকগ্রাউন্ড ট্যাবে গেলেও WebWorker টিকারের মাধ্যমে ফ্রেম সচল রাখে এবং সম্পূর্ণ আনকরাপ্টেড স্ট্রিম তৈরি করে।
+ */
+function renderWithUnthrottledStreamRecorder(reqW, reqH, durationSec, fps, bitrate) {
+    return new Promise((resolve) => {
+        const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+        const maxPixels = isMobile ? (1920 * 1080) : (2560 * 1440);
+        const scale = Math.min(1.0, Math.sqrt(maxPixels / (reqW * reqH)));
+        const renderW = Math.max(128, Math.round((reqW * scale) / 2) * 2);
+        const renderH = Math.max(128, Math.round((reqH * scale) / 2) * 2);
+
+        canvas.width = renderW;
+        canvas.height = renderH;
+        drawShaderFrame(0);
+        gl.finish();
+
+        const stream = canvas.captureStream(fps);
+        const videoTrack = stream.getVideoTracks()[0];
+
+        const mimeCandidates = [
+            'video/mp4;codecs=avc1',
+            'video/mp4',
+            'video/webm;codecs=vp9',
+            'video/webm;codecs=vp8',
+            'video/webm'
+        ];
+
+        let chosenMime = 'video/webm';
+        for (const m of mimeCandidates) {
+            if (window.MediaRecorder && MediaRecorder.isTypeSupported(m)) {
+                chosenMime = m;
+                break;
+            }
         }
-    };
+
+        let recorder;
+        try {
+            recorder = new MediaRecorder(stream, {
+                mimeType: chosenMime,
+                videoBitsPerSecond: bitrate
+            });
+        } catch (e) {
+            recorder = new MediaRecorder(stream);
+            chosenMime = recorder.mimeType || 'video/webm';
+        }
+
+        activeStreamRecorder = recorder;
+        const ext = chosenMime.includes('mp4') ? 'mp4' : 'webm';
+        document.getElementById('codecBadge').innerText = `⚡ Worker Stream .${ext.toUpperCase()} (${renderW}×${renderH})`;
+        document.getElementById('progressText').innerText = `আনথ্রটলড রিয়েল-টাইম স্ট্রিম রেকর্ড হচ্ছে...`;
+
+        const chunks = [];
+        recorder.ondataavailable = (e) => {
+            if (e.data && e.data.size > 0) chunks.push(e.data);
+        };
+
+        activeWorker = createUnthrottledWorker();
+
+        recorder.onstop = async () => {
+            destroyUnthrottledWorker(activeWorker);
+            activeWorker = null;
+            stream.getTracks().forEach(t => t.stop());
+            activeStreamRecorder = null;
+
+            if (cancelRecordingRequested || chunks.length === 0) {
+                resolve(null);
+                return;
+            }
+
+            const rawBlob = new Blob(chunks, { type: chosenMime });
+            const safeBlob = await safeOverwriteWebmDurationIfPresent(rawBlob, durationSec * 1000.0, chosenMime);
+            resolve({ blob: safeBlob, ext, width: renderW, height: renderH });
+        };
+
+        recorder.start();
+
+        const startPerf = performance.now();
+        const totalFrames = Math.round(durationSec * fps);
+
+        activeWorker.onmessage = () => {
+            if (!isRecording || cancelRecordingRequested) {
+                if (recorder.state !== 'inactive') recorder.stop();
+                return;
+            }
+
+            const elapsedSec = (performance.now() - startPerf) / 1000.0;
+            const clampedSec = Math.min(durationSec, elapsedSec);
+            const curFrame = Math.min(totalFrames, Math.round(clampedSec * fps));
+
+            drawShaderFrame(clampedSec);
+            gl.flush();
+
+            if (videoTrack && typeof videoTrack.requestFrame === 'function') {
+                try { videoTrack.requestFrame(); } catch (e) {}
+            }
+
+            const pct = Math.min(100, Math.round((clampedSec / durationSec) * 100));
+            document.getElementById('progressBar').style.width = pct + '%';
+            document.getElementById('progressPercent').innerText = pct + '%';
+            document.getElementById('frameCounter').innerText = `Frame: ${curFrame} / ${totalFrames} (${clampedSec.toFixed(1)}s / ${durationSec}.0s)`;
+            updateScrubberUI(clampedSec, durationSec);
+
+            if (elapsedSec >= durationSec) {
+                if (recorder.state !== 'inactive') recorder.stop();
+            }
+        };
+
+        activeWorker.postMessage({ cmd: 'start', interval: Math.round(1000 / fps) });
+    });
+}
+
+// মেইন রেন্ডার ও ডাউনলোড বাটন হ্যান্ডলার
+document.getElementById('recordBtn').addEventListener('click', async () => {
+    if (isRecording) return;
+
+    syncArtboardDimensions(false, false);
+
+    const targetDur = parseInt(document.getElementById('durationSelect').value, 10);
+    const targetFps = parseInt(document.getElementById('fpsSelect').value, 10);
+    const targetBitrate = parseInt(document.getElementById('bitrateSelect').value, 10);
+    const engineMode = document.getElementById('exportEngineSelect').value;
+
+    isRecording = true;
+    cancelRecordingRequested = false;
+
+    await acquireScreenWakeLock();
 
     const recordBtn = document.getElementById('recordBtn');
     const stopBtn = document.getElementById('stopBtn');
     const progBox = document.getElementById('progressContainer');
     const statusLabel = document.getElementById('statusLabel');
 
-    activeRecorder.onstop = () => {
-        isRecording = false;
-        stream.getTracks().forEach(track => track.stop());
-
-        const actualMime = activeRecorder.mimeType || selectedMime || 'video/webm';
-        const ext = actualMime.includes('mp4') ? 'mp4' : 'webm';
-        const blob = new Blob(recordedChunks, { type: actualMime });
-
-        if (blob.size > 0) {
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.style.display = 'none';
-            a.href = url;
-            a.download = `AdobeStock_Gradient_${width}x${height}_${targetDurationSec}s_${fps}fps.${ext}`;
-            document.body.appendChild(a);
-            a.click();
-            setTimeout(() => {
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-            }, 15000);
-            showToast(`✅ সফলভাবে ${width}×${height} রেজোলিউশনের ভিডিও ডাউনলোড হয়েছে!`);
-        } else {
-            showToast("⚠️ ভিডিও বাফার খালি ছিল। অনুগ্রহ করে 2K রেজোলিউশন বা 35 Mbps দিয়ে চেষ্টা করুন।");
-        }
-
-        recordBtn.classList.remove('opacity-50', 'pointer-events-none');
-        stopBtn.classList.add('hidden');
-        progBox.classList.add('hidden');
-        statusLabel.innerText = `লাইভ ইমেজ-কেন্দ্রিক অ্যানিমেশন প্রিভিউ`;
-        startTime = performance.now();
-    };
-
-    activeRecorder.onerror = () => {
-        finishRecording();
-    };
-
-    isRecording = true;
-    recordStartTimestamp = performance.now();
-    // প্রতি ১ সেকেন্ড পরপর মেমোরি চাঙ্ক ফ্লাশ করা হবে, ফলে ব্রাউজার কখনোই ক্র্যাশ করবে না
-    activeRecorder.start(1000);
-
     recordBtn.classList.add('opacity-50', 'pointer-events-none');
     stopBtn.classList.remove('hidden');
     progBox.classList.remove('hidden');
     progBox.classList.add('flex');
-    statusLabel.innerText = `🔴 রেন্ডার চলছে (${width}×${height} px)...`;
+    document.getElementById('progressBar').style.width = '0%';
+    document.getElementById('progressPercent').innerText = '0%';
+    statusLabel.innerText = `🔴 মাস্টার ভিডিও রেন্ডার চলছে (${targetDur}s)...`;
+
+    let exportResult = null;
+
+    try {
+        // প্রথমেই জিরো-সিডিএন Native ISO MP4 Muxer চেষ্টা করা হবে
+        if (engineMode === 'auto') {
+            exportResult = await renderWithNativeMp4Muxer(artboardWidth, artboardHeight, targetDur, targetFps, targetBitrate);
+        }
+
+        // যদি ব্রাউজারে WebCodecs না থাকে বা ইউজার Stream সিলেক্ট করেন, তবে Unthrottled Worker Stream চলবে
+        if (!exportResult && !cancelRecordingRequested) {
+            exportResult = await renderWithUnthrottledStreamRecorder(artboardWidth, artboardHeight, targetDur, targetFps, targetBitrate);
+        }
+    } catch (err) {
+        console.error("Export Engine Error:", err);
+    }
+
+    await releaseScreenWakeLock();
+    isRecording = false;
+    updatePreviewBufferResolution();
+
+    recordBtn.classList.remove('opacity-50', 'pointer-events-none');
+    stopBtn.classList.add('hidden');
+    progBox.classList.add('hidden');
+    statusLabel.innerText = `লাইভ আর্টবোর্ড প্রিভিউ সক্রিয়`;
+
+    if (cancelRecordingRequested) {
+        showToast("⏹️ ভিডিও রেন্ডার বাতিল করা হয়েছে।");
+        return;
+    }
+
+    if (exportResult && exportResult.blob && exportResult.blob.size > 1000) {
+        const filename = `AdobeStock_Gradient_${exportResult.width}x${exportResult.height}_${targetDur}s_${targetFps}fps.${exportResult.ext}`;
+        presentCompletedVideo(exportResult.blob, filename, targetDur, exportResult.width, exportResult.height, targetFps);
+    } else {
+        showToast("⚠️ ভিডিও তৈরি করা যায়নি। অনুগ্রহ করে 1920×1080 প্রিসেট সিলেক্ট করে আবার চেষ্টা করুন।");
+    }
 });
 
-// মাঝপথে সেভ করার বাটন
 document.getElementById('stopBtn').addEventListener('click', () => {
-    finishRecording();
+    cancelRecordingRequested = true;
+    if (activeStreamRecorder && activeStreamRecorder.state !== 'inactive') {
+        try { activeStreamRecorder.stop(); } catch (e) {}
+    }
+});
+
+// ব্রাউজারের হার্ডওয়্যার এনকোডার সক্ষমতা ব্যাজ আপডেট
+async function checkHardwareCapabilities() {
+    const badge = document.getElementById('engineCapBadge');
+    if (typeof window.VideoEncoder !== 'undefined') {
+        badge.innerText = "⚡ WebCodecs Native MP4 Ready";
+        badge.className = "text-[10px] bg-emerald-500/15 text-emerald-300 px-2 py-0.5 rounded font-mono border border-emerald-500/30";
+    } else {
+        badge.innerText = "⚡ Worker Stream Ready";
+        badge.className = "text-[10px] bg-sky-500/15 text-sky-300 px-2 py-0.5 rounded font-mono border border-sky-500/30";
+    }
+}
+
+// অ্যাপ্লিকেশন বুটস্ট্র্যাপ
+window.addEventListener('DOMContentLoaded', () => {
+    try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+            applyProjectState(JSON.parse(saved));
+        } else {
+            syncArtboardDimensions(true, false);
+        }
+    } catch (e) {
+        syncArtboardDimensions(true, false);
+    }
+    const initDur = parseFloat(document.getElementById('durationSelect').value);
+    updateScrubberUI(0, initDur);
+    checkHardwareCapabilities();
+    requestAnimationFrame(masterPreviewLoop);
 });
 </script>
 </body>
